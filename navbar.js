@@ -1,36 +1,93 @@
 let menSection = {
-    "Topwear": ["T-Shirts", "Casual shirts", "Formal Shirts", "Sweaters", "Jackets", "Blazers & Coats", "Suits", "Rain Jackets"],
-    "Indian & Festive Wear": ["Kurtas & Kurta Sets", "Sherwanis", "Nehru Jackets", "Dhotis"],
-    "Bottomwear": ["Jeans", "Casual Trousers", "Formal Trousers", "Shorts", "Track Pants & Joggers"],
-    "Innerwear & Sleepwear": ["Briefs & Trunks", "Boxers", "Vests", "Sleepwear & Longwear", "Thermals"],
-    "Plus Size": "",
-    "Footwear": ["Casual Shoes", "Sports Shoes", "Formal Shoes", "Sneakers", "Sandals & Floaters", "Flip Flop", "Socks"],
-    "Personal Care & Grooming": "",
-    "Sunglasses & Frames": "",
-    "Watches": "",
-    "Sports & Active Wear": ["Sports Shoes", "Sports Sandals", "Active T-Shirts", "Track Pants & Shorts", "Tracksuits", "Jackets & Sweatshirts", "Sports Accessories", "Swimwear"],
-    "Gadgets": ["Smart Wearables", "Fitness Gadgets", "Headphones", "Speakers"],
-    "Fashion Accessories": ["Wallets", "Belts", "Perfunes & Body Mist", "Trimmers", "Deodorants", "Ties,Cuffflinks & Pocket Squares", "Accessory Gift Sets", "Caps & Hats", "Mufflers,Scarves & Gloves", "Phone Cases", "Rings & Wristwear", "Helmets"],
-    "Bags & Bagpacks": "",
-    "Luggages & Trolleys": ""
+    "Topwear": {
+        "T-Shirts": ["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Causal Shirts":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Formal Shirts":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Sweatshirts":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+    },
+    "Indian & Festive Wear": {
+        "Kurtas & Kurta Sets":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Sherwanis":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Nehru Jackets":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Dhotis":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"]
+    },
+    "Bottomwear": {
+        "Jeans":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Casual Trousers":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Formal Trousers":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Shorts":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Track Pants & Joggers":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"]
+    },
+    "Innerwear & Sleepwear": {
+        "Briefs & Trunks":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Boxers":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Vests":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Sleepwear & Longwear":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Thermals":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"]
+    },
+    // "Plus Size": "",
+    "Footwear": {
+        "Casual Shoes":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Sports Shoes":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Formal Shoes":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Sneakers":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Sandals & Floaters":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Flip Flop":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Socks":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"]
+    },
+    // "Personal Care & G:rooming": "",
+    // "Sunglasses & Frames": "",
+    // "Watches": "",
+    "Sports & Active Wear": {
+        "Sports Shoes":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Sports Sandals":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Active T-Shirts":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Track Pants & Shorts":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Tracksuits":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Jackets & Sweatshirts":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Sports Accessories":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Swimwear":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"]
+    },
+    "Gadgets": {
+        "Smart Wearables":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Fitness Gadgets":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Headphones":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Speakers":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"]
+    },
+    "Fashion Accessories": {
+        "Wallets":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Belts":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Perfunes & Body Mist":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Trimmers":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Deodorants":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Ties,Cuffflinks & Pocket Squares":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Accessory Gift Sets":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Caps & Hats":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Mufflers,Scarves & Gloves":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Phone Cases":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Rings & Wristwear":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Helmets":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"]
+    },
+    // "Bags & Bagpacks": "",
+    // "Luggages & Trolleys": ""
 }
 
 let womenSection = {
     "Indian & Fusion Wear": ["Kurtas & Suits", "Kurtis, Tunics & Tops", "Ethnic Wear", "Leggings, Salwars & Churidars", "Skirts & Palazzos", "Sarees Dress Materials", "Lehenga Cholis", "Dupattas & Shawls", "Jackets"],
     "Western Wear": ["Dresses", "Jumpsuits", "Tops", "Jeans", "Trousers & Capris", "Shorts & Skirts", "Shrugs", "Sweaters & Sweatshirts", "Jackets & Coats", "Blazers & Waistcoats"],
-    "Plus Size": "",
-    "Sunglasses & Frames": "",
+    // "Plus Size": "",
+    // "Sunglasses & Frames": "",
     "Footwear": ["Flats", "Casual Shoes", "Heels", "Boots", "Sports Shoes & Floaters"],
     "Sports & Active Wear": ["Clothing", "Footwear", "Sports Accessories", "Sports Equipment"],
-    "Belts, Scarves & More": "",
-    "Watches & Wearables": "",
+    // "Belts, Scarves & More": "",
+    // "Watches & Wearables": "",
     "Lingerie & Sleepwear": ["Bra", "Briefs", "Shapewear", "Sleepwear & Loungewear", "Swimwear", "Camisoles & Thermals"],
     "Beauty & Personal Care": ["Makeup", "Skincare", "Premium Beauty", "Lipsticks", "Fragrances"],
     "Gadgets": ["Smart Wearables", "Fitness Gadgets", "Headphones", "Speakers"],
     "Jewellery": ["Fashion Jewellery", "Fine Jewellery", "Earrings"],
-    "Backpacks": "",
-    "Handbags, Bags & Wallets": "",
-    "Luggages & Trolleys": ""
+    // "Backpacks": "",
+    // "Handbags, Bags & Wallets": "",
+    // "Luggages & Trolleys": ""
 }
 
 let kidsSection = {
@@ -63,22 +120,17 @@ let offersSection = {
 }
 
 const navItems = document.getElementsByClassName("nav-items");
-document.getElementById("item-box").addEventListener("mouseover", visibile);
-document.getElementById("item-box").addEventListener("mouseout", hidden);
-
-// [...navItems].map((navlink,index)=>{
-//     navlink.addEventListener("mouseover", visibile);
-//     navlink.addEventListener("mouseout", hidden);
-// })
-
+document.getElementById("item-box").addEventListener("mouseover", showClothes);
+document.getElementById("item-box").addEventListener("mouseout", hideClothes);
 
 for (let i = 0; i < navItems.length; i++) {
-    navItems[i].addEventListener("mouseover", visibile);
-    navItems[i].addEventListener("mouseout", hidden);
+    navItems[i].addEventListener("click", showClothes);
+    navItems[i].addEventListener("mouseout", hideClothes);
 }
 
 function parsingItems(itemName) {
     const menJsonData = Object.keys(menSection);
+    let uniqueValue = 1;
     if (itemName == 'men') {
         let htmz = "";
         for (let i = 0; i < menJsonData.length; i++) {
@@ -89,13 +141,23 @@ function parsingItems(itemName) {
                 htmz += "<ul class='items items-odd'>";
             htmz += "<li class='item-category' style='color:#ee5f73'>" + menJsonData[i] + "</li>";
             htmz += "<ul class='item-sub-category'>";
-            for (let j = 0; j < menSection[menJsonData[i]].length; j++) {
-                htmz += "<li><a href=''>" + menSection[menJsonData[i]][j] + "</a></li>";
+            for (const [key, value] of Object.entries(menSection[menJsonData[i]])) {
+                let clothesKey = key;
+                let clothesValue = value;
+                htmz += "<li onclick=toggleData('"+uniqueValue+"')><a href='#'>" + clothesKey + "<i class='fas fa-chevron-down'></i></a></li>";
+                htmz += "<div id="+uniqueValue+" class='dropdown-content'>";
+                [...clothesValue].map(value => {
+                    htmz += "<li style='margin-left:15px;'><a href='#'>" + value + "</a></li>";
+                });
+                uniqueValue++;
+                htmz += "</div>";
             }
+
             htmz += "<hr class='hr-line'>";
             htmz += "</ul>";
             htmz += "</ul>";
         }
+        uniqueValue++;
         document.getElementById("items-data").innerHTML = htmz;
     } else if (itemName == 'women') {
         const womenJsonData = Object.keys(womenSection);
@@ -177,7 +239,7 @@ function parsingItems(itemName) {
     }
 }
 
-function visibile(event) {
+function showClothes(event) {
     let show = 'visibility:visible;opacity:1;transition: all .6s ease-out;'
     parsingItems(event.target.dataset.value);
     if (event.target.dataset.value == 'men')
@@ -195,8 +257,12 @@ function visibile(event) {
     document.getElementById("item-box").style.cssText = show;
     document.getElementById("background-fade").style.visibility = 'visible';
 }
-function hidden() {
+function hideClothes() {
     let hide = 'visibility:hidden;opacity:0;transition: all .5s ease-out;';
     document.getElementById("item-box").style.cssText = hide;
     document.getElementById("background-fade").style.visibility = 'hidden';
+}
+
+function toggleData(id){
+    document.getElementById(id).classList.toggle("show");
 }
