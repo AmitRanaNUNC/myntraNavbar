@@ -120,13 +120,19 @@ let offersSection = {
 }
 
 const navItems = document.getElementsByClassName("nav-items");
-document.getElementById("item-box").addEventListener("mouseover", showClothes);
-document.getElementById("item-box").addEventListener("mouseout", hideClothes);
+// document.getElementById("item-box").addEventListener("mouseover", showClothes);
+// document.getElementById("item-box").addEventListener("mouseout", hideClothes);
 
 for (let i = 0; i < navItems.length; i++) {
     navItems[i].addEventListener("click", showClothes);
-    navItems[i].addEventListener("mouseout", hideClothes);
 }
+window.addEventListener('click',function(event){
+    if(event.target.id == 'background-fade' || event.target.id == 'navbar')
+        hideClothes();  
+});
+
+document.getElementById('closeButton').addEventListener('click',hideClothes);
+
 
 function parsingItems(itemName) {
     const menJsonData = Object.keys(menSection);
@@ -256,11 +262,13 @@ function showClothes(event) {
     // document.getElementById("item-box").style.visibility ='visible';
     document.getElementById("item-box").style.cssText = show;
     document.getElementById("background-fade").style.visibility = 'visible';
+    document.getElementById('closeButton').style.visibility = 'visible';
 }
 function hideClothes() {
     let hide = 'visibility:hidden;opacity:0;transition: all .5s ease-out;';
     document.getElementById("item-box").style.cssText = hide;
     document.getElementById("background-fade").style.visibility = 'hidden';
+    document.getElementById('closeButton').style.visibility = 'hidden';
 }
 
 function toggleData(id){
