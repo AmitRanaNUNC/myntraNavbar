@@ -73,38 +73,157 @@ let menSection = {
 }
 
 let womenSection = {
-    "Indian & Fusion Wear": ["Kurtas & Suits", "Kurtis, Tunics & Tops", "Ethnic Wear", "Leggings, Salwars & Churidars", "Skirts & Palazzos", "Sarees Dress Materials", "Lehenga Cholis", "Dupattas & Shawls", "Jackets"],
-    "Western Wear": ["Dresses", "Jumpsuits", "Tops", "Jeans", "Trousers & Capris", "Shorts & Skirts", "Shrugs", "Sweaters & Sweatshirts", "Jackets & Coats", "Blazers & Waistcoats"],
+    "Indian & Fusion Wear": {
+        "Kurtas & Suits":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Kurtis":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Tunics & Tops":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Ethnic Wear":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Leggings, Salwars & Churidars":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Skirts & Palazzos":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Sarees Dress Materials":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Lehenga Cholis":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Dupattas & Shawls":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Jackets":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"]
+    },
+    "Western Wear": {
+        "Dresses":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Jumpsuits":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Tops":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Jeans":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Trousers & Capris":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Shorts & Skirts":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Shrugs":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Sweaters & Sweatshirts":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Jackets & Coats":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Blazers & Waistcoats":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"]
+    },
     // "Plus Size": "",
     // "Sunglasses & Frames": "",
-    "Footwear": ["Flats", "Casual Shoes", "Heels", "Boots", "Sports Shoes & Floaters"],
-    "Sports & Active Wear": ["Clothing", "Footwear", "Sports Accessories", "Sports Equipment"],
+    "Footwear": {
+        "Flats":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Casual Shoes":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Heels":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Boots":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Sports Shoes & Floaters":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"]
+    },
+    "Sports & Active Wear": {
+        "Clothing":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Footwear":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Sports Accessories":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Sports Equipment":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"]
+    },
     // "Belts, Scarves & More": "",
     // "Watches & Wearables": "",
-    "Lingerie & Sleepwear": ["Bra", "Briefs", "Shapewear", "Sleepwear & Loungewear", "Swimwear", "Camisoles & Thermals"],
-    "Beauty & Personal Care": ["Makeup", "Skincare", "Premium Beauty", "Lipsticks", "Fragrances"],
-    "Gadgets": ["Smart Wearables", "Fitness Gadgets", "Headphones", "Speakers"],
-    "Jewellery": ["Fashion Jewellery", "Fine Jewellery", "Earrings"],
+    "Lingerie & Sleepwear": {
+        "Bra":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Briefs":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Shapewear":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        },
+    // "Beauty & Personal Care": ["Makeup", "Skincare", "Premium Beauty", "Lipsticks", "Fragrances"],
+    // "Gadgets": ["Smart Wearables", "Fitness Gadgets", "Headphones", "Speakers"],
+    // "Jewellery": ["Fashion Jewellery", "Fine Jewellery", "Earrings"],
     // "Backpacks": "",
     // "Handbags, Bags & Wallets": "",
     // "Luggages & Trolleys": ""
 }
 
 let kidsSection = {
-    "Boys Clothing": ["T-Shirts", "Shirts", "Shorts", "Jeans", "Trousers", "Clothing Sets", "Ethnic Wear", "Track Pants & Pyjamas", "Jacket, Sweater & Sweatshirts", "Innerwear & Sleepwear"],
-    "Girls Clothing": ["Dresses", "Tops", "Tshirts", "Clothing Sets", "Ethnic wear", "Dungarees & Jumpsuits", "Skirts & shorts", "Tights & Leggings", "Jeans, Trousers & Capris", "Jacket, Sweater & Sweatshirts", "Innerwear & Sleepwear"],
-    "Boys Footwear": ["Casual Shoes", "Sports Shoes", "Sandals", "Flip flops", "School Shoes"],
-    "Girls Footwear": ["Flats", "Casual Shoes", "Sports Shoes", "Heels", "Flip flops", "Sandals", "School Shoes"],
-    "Infants": ["Rompers & Onesies", "Clothing Sets", "Tshirts & Tops", "Dresses", "Bottom wear", "Winter Wear", "Innerwear & Sleepwear", "Infants Accessories"],
-    "Kids Accessories": ["Bags & Backpacks", "Watches", "Jewellery & Hair Accessories", "Eyewear"]
+    // "Boys Clothing": ["T-Shirts", "Shirts", "Shorts", "Jeans", "Trousers", "Clothing Sets", "Ethnic Wear", "Track Pants & Pyjamas", "Jacket, Sweater & Sweatshirts", "Innerwear & Sleepwear"],
+    // "Girls Clothing": ["Dresses", "Tops", "Tshirts", "Clothing Sets", "Ethnic wear", "Dungarees & Jumpsuits", "Skirts & shorts", "Tights & Leggings", "Jeans, Trousers & Capris", "Jacket, Sweater & Sweatshirts", "Innerwear & Sleepwear"],
+    // "Boys Footwear": ["Casual Shoes", "Sports Shoes", "Sandals", "Flip flops", "School Shoes"],
+    // "Girls Footwear": ["Flats", "Casual Shoes", "Sports Shoes", "Heels", "Flip flops", "Sandals", "School Shoes"],
+    // "Infants": ["Rompers & Onesies", "Clothing Sets", "Tshirts & Tops", "Dresses", "Bottom wear", "Winter Wear", "Innerwear & Sleepwear", "Infants Accessories"],
+    // "Kids Accessories": ["Bags & Backpacks", "Watches", "Jewellery & Hair Accessories", "Eyewear"]
+    "Topwear": {
+        "T-Shirts": ["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Causal Shirts": ["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Formal Shirts": ["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Sweatshirts": ["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+    },
+    "Indian & Festive Wear": {
+        "Kurtas & Kurta Sets": ["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Sherwanis": ["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Nehru Jackets": ["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Dhotis": ["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"]
+    },
+    "Bottomwear": {
+        "Jeans": ["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Casual Trousers": ["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Formal Trousers": ["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Shorts": ["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Track Pants & Joggers": ["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"]
+    },
+    "Innerwear & Sleepwear": {
+        "Briefs & Trunks": ["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Boxers": ["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Vests": ["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Sleepwear & Longwear": ["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Thermals": ["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"]
+    },
+    // "Plus Size": "",
+    "Footwear": {
+        "Casual Shoes": ["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Sports Shoes": ["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Formal Shoes": ["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Sneakers": ["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Sandals & Floaters": ["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Flip Flop": ["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Socks": ["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"]
+    },
 }
 
 let homeAndLivingSection = {
-    "Bed Linen & Furnishing": ["Bedsheets", "Bedding Sets", "Blankets, Quilts & Dohars", "Pillows & Pillow Covers", "Bed Covers"],
-    "Flooring": ["Carpets", "Floor Mats & Dhurries", "Door Mats"],
-    "Bath": ["Bath Towels", "Hand & Face Towels", "Beach Towels", "Towels Set", "Bath Rugs", "Bath Robes", "Bathroom Accessories"],
-    "Lamps & Lighting": ["Floor Lamps", "Table Lamps", "Wall Lamps"],
-    "Home Décor": ["Plants & Planters", "Aromas & Candles", "Clocks", "Mirrors", "Wall Décor", "Wall Shelves", "Fountains", "Showpieces & Vases", "Cushions & Cushion Covers", "Curtains"],
+    // "Bed Linen & Furnishing": ["Bedsheets", "Bedding Sets", "Blankets, Quilts & Dohars", "Pillows & Pillow Covers", "Bed Covers"],
+    // "Flooring": ["Carpets", "Floor Mats & Dhurries", "Door Mats"],
+    // "Bath": ["Bath Towels", "Hand & Face Towels", "Beach Towels", "Towels Set", "Bath Rugs", "Bath Robes", "Bathroom Accessories"],
+    // "Lamps & Lighting": ["Floor Lamps", "Table Lamps", "Wall Lamps"],
+    // "Home Décor": ["Plants & Planters", "Aromas & Candles", "Clocks", "Mirrors", "Wall Décor", "Wall Shelves", "Fountains", "Showpieces & Vases", "Cushions & Cushion Covers", "Curtains"],
+    "Indian & Fusion Wear": {
+        "Kurtas & Suits":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Kurtis":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Tunics & Tops":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Ethnic Wear":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Leggings, Salwars & Churidars":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Skirts & Palazzos":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Sarees Dress Materials":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Lehenga Cholis":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Dupattas & Shawls":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Jackets":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"]
+    },
+    "Western Wear": {
+        "Dresses":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Jumpsuits":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Tops":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Jeans":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Trousers & Capris":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Shorts & Skirts":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Shrugs":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Sweaters & Sweatshirts":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Jackets & Coats":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Blazers & Waistcoats":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"]
+    },
+    // "Plus Size": "",
+    // "Sunglasses & Frames": "",
+    "Footwear": {
+        "Flats":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Casual Shoes":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Heels":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Boots":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Sports Shoes & Floaters":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"]
+    },
+    "Sports & Active Wear": {
+        "Clothing":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Footwear":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Sports Accessories":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Sports Equipment":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"]
+    },
+    // "Belts, Scarves & More": "",
+    // "Watches & Wearables": "",
+    "Lingerie & Sleepwear": {
+        "Bra":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Briefs":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        "Shapewear":["Puma", "Addidas", "Roadster", "Nike", "UCB", "HRX"],
+        },
 }
 
 let offersSection = {
@@ -119,11 +238,11 @@ let offersSection = {
     "Dresses Under 1299": ""
 }
 
-const navItems = document.getElementsByClassName("nav-items");
+const navItems = document.querySelectorAll('.nav-items');
+[...navItems].map((navItem)=>{
+    navItem.addEventListener("click", showClothes);
+});
 
-for (let i = 0; i < navItems.length; i++) {
-    navItems[i].addEventListener("click", showClothes);
-}
 window.addEventListener('click', function (event) {
     if (event.target.id == 'background-fade' || event.target.id == 'navbar')
         hideClothes();
@@ -131,176 +250,86 @@ window.addEventListener('click', function (event) {
 
 document.getElementById('closeButton').addEventListener('click', hideClothes);
 
-
 function parsingItems(itemName) {
-    const menJsonData = Object.keys(menSection);
     let uniqueValue = 1;
-    if (itemName == 'men') {
-        let htmz = "";
-        for (let i = 0; i < menJsonData.length; i++) {
-            // htmz += "<ul class='items'>";
-            if (i % 2 != 0)
-                htmz += "<ul class='items items-even'>";
-            else
-                htmz += "<ul class='items items-odd'>";
-            htmz += "<li class='item-category' style='color:#ee5f73'>" + menJsonData[i] + "</li>";
-            htmz += "<ul class='item-sub-category'>";
-            for (const [key, value] of Object.entries(menSection[menJsonData[i]])) {
-                let clothesKey = key;
-                let clothesValue = value;
-                htmz += "<li class='' onclick=toggleData('" + uniqueValue + "')><a href='#'>" + clothesKey + "<i class='fas fa-chevron-down'></a></i></li>";
-                htmz += "<div id=" + uniqueValue + " class='dropdown-content'>";
-                [...clothesValue].map(value => {
-                    htmz += "<li style='margin-left:15px;'><a href='#'>" + value + "</a></li>";
-                });
-                uniqueValue++;
-                htmz += "</div>";
-            }
 
-            htmz += "<hr class='hr-line'>";
-            htmz += "</ul>";
-            htmz += "</ul>";
-        }
-        uniqueValue++;
-        document.getElementById("items-data").innerHTML = htmz;
-    } else if (itemName == 'women') {
-        const womenJsonData = Object.keys(womenSection);
-        let htmz = "";
-        for (let i = 0; i < womenJsonData.length; i++) {
-            // htmz += "<ul class='items'>"; 
-            if (i % 2 != 0)
-                htmz += "<ul class='items items-even'>";
-            else
-                htmz += "<ul class='items items-odd'>";
-            htmz += "<li class='item-category' style='color:#fb56c1'>" + womenJsonData[i] + "</li>";
-            htmz += "<ul class='item-sub-category'>";
-            for (let j = 0; j < womenSection[womenJsonData[i]].length; j++) {
-                htmz += "<li><a href='#'>" + womenSection[womenJsonData[i]][j] + "</a></li>";
-            }
-            htmz += "<hr class='hr-line'>";
-            htmz += "</ul>";
-            htmz += "</ul>";
-        }
-        document.getElementById("items-data").innerHTML = htmz;
-    } else if (itemName == 'kids') {
-        const kidsJsonData = Object.keys(kidsSection);
-        let htmz = "";
-        for (let i = 0; i < kidsJsonData.length; i++) {
-            // htmz += "<ul class='items'>";
-            if (i % 2 == 0)
-                htmz += "<ul class='items-even items'>";
-            else
-                htmz += "<ul class='items-odd items'>";
-            htmz += "<li class='item-category' style='color:#f26a10'>" + kidsJsonData[i] + "</li>";
-            htmz += "<ul class='item-sub-category'>";
-            for (let j = 0; j < kidsSection[kidsJsonData[i]].length; j++) {
-                htmz += "<li><a href=''>" + kidsSection[kidsJsonData[i]][j] + "</a></li>";
-            }
-            htmz += "<hr class='hr-line'>";
-            htmz += "</ul>";
-            htmz += "</ul>";
-        }
-        document.getElementById("items-data").innerHTML = htmz;
-    } else if (itemName == 'homeandliving') {
-        const homeAndLivingJsonData = Object.keys(homeAndLivingSection);
-        let htmz = "";
-        for (let i = 0; i < homeAndLivingJsonData.length; i++) {
-            // htmz += "<ul class='items'>";
-            if (i % 2 == 0)
-                htmz += "<ul class='items-even items'>";
-            else
-                htmz += "<ul class='items-odd items'>";
-            htmz += "<li class='item-category' style='color:#f26a10'>" + homeAndLivingJsonData[i] + "</li>";
-            htmz += "<ul class='item-sub-category'>";
-            for (let j = 0; j < homeAndLivingSection[homeAndLivingJsonData[i]].length; j++) {
-                htmz += "<li><a href=''>" + homeAndLivingSection[homeAndLivingJsonData[i]][j] + "</a></li>";
-            }
-            htmz += "<hr class='hr-line'>";
-            htmz += "</ul>";
-            htmz += "</ul>";
-        }
-        document.getElementById("items-data").innerHTML = htmz;
-    }
+    if (itemName == 'men')
+        section(menSection,uniqueValue);
+    else if (itemName == 'women')
+        section(womenSection,uniqueValue); 
+    else if (itemName == 'kids')
+        section(kidsSection,uniqueValue);
+    else if (itemName == 'homeandliving')
+        section(homeAndLivingSection,uniqueValue);
     else if (itemName == 'offers') {
         const offersJsonData = Object.keys(offersSection);
         const offersJsonValue = Object.values(offersSection);
         let htmz = "";
         const checkEmpty = (ele) => ele === '';
         if (!offersJsonValue.every(checkEmpty)) {
-            for (let i = 0; i < offersJsonData.length; i++) {
-                // const result = offersJsonValue[i].filter(word => word != '')
-                // console.log(result);
-                // htmz += "<ul class='items'>";
-                if (offersSection[offersJsonData[i]] != '') {
-                    if (i % 2 == 0)
-                        htmz += "<ul class='items-even items'>";
-                    else
-                        htmz += "<ul class='items-odd items'>";
-
-                    htmz += "<li class='item-category' style='color:#f26a10'>" + offersJsonData[i] + "</li>";
-                    htmz += "<ul class='item-sub-category'>";
-                    for (let j = 0; j < offersSection[offersJsonData[i]].length; j++) {
-                        htmz += "<li><a href=''>" + offersSection[offersJsonData[i]][j] + "</a></li>";
-                    }
-                    htmz += "<hr class='hr-line'>";
-                    htmz += "</ul>";
-                    htmz += "</ul>";
-
+            offersJsonData.map((offerKeys,index)=>{
+                if (offersSection[offerKeys] != '') {
+                    htmz += (index % 2 != 0) ? `<ul class='items items-even'>` : `<ul class='items items-odd'>`;
+                    htmz += `<li class='item-category' style='color:#f26a10'>${offerKeys}</li>
+                            <ul class='item-sub-category'>`;
+                    offersSection[offerKeys].map((value)=>{
+                        htmz += `<li><a href=''>${value}</a></li>`;
+                    })
+                    htmz += `<hr class='hr-line'>
+                            </ul>
+                            </ul>`;
                 }
-
-            }
+            });
             document.getElementById("items-data").innerHTML = htmz;
-        } else {
+        }else
             document.getElementById("items-data").innerHTML = "<div style='text-align:center;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:green;opacity:0.7;'>We Don't have any offers right now for you!!!</div>";
-        }
     }
+}
+
+let section = (sectionValue,uniqueValue)=>{
+    let htmz = "";
+    const sectionData = Object.keys(sectionValue);
+    sectionData.map((value,index)=>{
+            htmz += (index % 2 != 0) ? `<ul class='items items-even'>` : `<ul class='items items-odd'>`;
+            htmz += `<li class='item-category' style='color:#ee5f73'>${value}</li>
+                    <ul class='item-sub-category'>`;
+            for (const [key, value] of Object.entries(sectionValue[sectionData[index]])) {
+                let clothesKey = key;
+                let clothesValue = value;
+                htmz += `<li class='' onclick=toggleData('${uniqueValue}')><a href='#'>${clothesKey}<i class='fas fa-chevron-down'></a></i></li>
+                        <div id=${uniqueValue} class='dropdown-content'>`;
+                
+                [...clothesValue].map(value => {
+                    htmz += `<li style='margin-left:15px;'><a href='#'>${value}</a></li>`;
+                });
+                uniqueValue++;
+                htmz += `</div>`;
+            }
+
+            htmz += `<hr class='hr-line'>
+                    </ul>
+                    </ul>`;
+        });
+        uniqueValue++;
+        document.getElementById("items-data").innerHTML = htmz;
+}
+
+const sectionArray = ['men','women','kids','homeandliving','offers'];
+
+const toggleActive = (sectionValue,currentElement)=>{
+    currentElement.classList.add('active');
+    sectionArray.map((ele)=>{
+        if(sectionValue != ele){
+            document.getElementById(ele).classList.remove('active');
+        }
+    });    
 }
 
 function showClothes(event) {
     let show = 'visibility:visible;opacity:1;transition: all .6s ease-out;'
     parsingItems(event.target.dataset.value);
-    if (event.target.dataset.value == 'men'){
-        this.style.borderBottomColor = '#ee5f73';
-        this.classList.add('active');
-        document.getElementById('women').classList.remove('active');
-        document.getElementById('kids').classList.remove('active');
-        document.getElementById('homeandliving').classList.remove('active');
-        document.getElementById('offers').classList.remove('active');
-    }
-    if (event.target.dataset.value == 'women'){
-        this.style.borderBottomColor = '#fb56c1';
-        this.classList.add('active');
-        document.getElementById('men').classList.remove('active');
-        document.getElementById('kids').classList.remove('active');
-        document.getElementById('homeandliving').classList.remove('active');
-        document.getElementById('offers').classList.remove('active');
-    }
-    else if (event.target.dataset.value == 'kids'){
-        this.style.borderBottomColor = '#f26a10';
-        this.classList.add('active');
-        document.getElementById('men').classList.remove('active');
-        document.getElementById('women').classList.remove('active');
-        document.getElementById('homeandliving').classList.remove('active');
-        document.getElementById('offers').classList.remove('active');
-    }
-    else if (event.target.dataset.value == 'homeandliving'){
-        this.style.borderBottomColor = '#f2c210';
-        this.classList.add('active');
-        document.getElementById('men').classList.remove('active');
-        document.getElementById('women').classList.remove('active');
-        document.getElementById('kids').classList.remove('active');
-        document.getElementById('offers').classList.remove('active');
-    }
-    else if (event.target.dataset.value == 'offers'){
-        this.style.borderBottomColor = '#0db7af';
-        this.classList.add('active');
-        document.getElementById('men').classList.remove('active'); 
-        document.getElementById('women').classList.remove('active');
-        document.getElementById('kids').classList.remove('active');
-        document.getElementById('homeandliving').classList.remove('active');
-    }
 
-    // document.getElementById("item-box").style.visibility ='visible';
+    toggleActive(event.target.dataset.value, this);
     document.getElementById("item-box").style.cssText = show;
     document.getElementById("background-fade").style.visibility = 'visible';
     document.getElementById('closeButton').style.visibility = 'visible';
@@ -313,28 +342,29 @@ function hideClothes() {
     document.getElementById('closeButton').style.visibility = 'hidden';
 
     /*hiding if any active class is there*/
-
-    document.getElementById('men').classList.remove('active'); 
-    document.getElementById('women').classList.remove('active');
-    document.getElementById('kids').classList.remove('active');
-    document.getElementById('homeandliving').classList.remove('active');
-    document.getElementById('offers').classList.remove('active');
+    sectionArray.map((ele)=>{
+        document.getElementById(ele).classList.remove('active');
+    });
 }
 
 function toggleData(id) {
     const showValue = document.getElementById(id).classList.toggle("show");
+    
+    if(this.event.target.nodeName == 'A' || this.event.target.nodeName == 'I')
+        this.event.target.parentElement.classList.toggle('item-bolded');
+    else
+        this.event.target.firstElementChild.classList.toggle('item-bolded');
+      
     if(showValue){
         if(this.event.target.firstElementChild)
             this.event.target.firstElementChild.style.transform = 'rotate(0deg)';
         else    
             this.event.target.style.transform = 'rotate(0deg)';
-        this.event.target.parentElement.classList.add('item-bolded');
     }
     else{
         if(this.event.target.firstElementChild)
             this.event.target.firstElementChild.style.transform = 'rotate(-90deg)';
         else    
             this.event.target.style.transform = 'rotate(-90deg)';
-        this.event.target.parentElement.classList.remove('item-bolded');
     }
 }
