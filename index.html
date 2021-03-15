@@ -7,17 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navbar</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
 </head>
 
 <body>
     <nav id="navbar">
-        <a id="men" class="nav-items" href="#" data-value="men" style="border-bottom-color: #ee5f73;">men</a>
-        <a id="women" class="nav-items" href="#" data-value="women" style="border-bottom-color: #fb56c1;">women</a>
-        <a id="kids" class="nav-items" href="#" data-value="kids" style="border-bottom-color: #f26a10;">kids</a>
-        <a id="homeandliving" class="nav-items" href="#" data-value="homeandliving" style="border-bottom-color: #f26a10;">home & living</a>
-        <a id="offers" class="nav-items" href="#" data-value="offers" style="border-bottom-color: #0db7af;">offers</a>
-        <a id="closeButton" href="#" class="btn-closed" style="color:black">&times;</a>
+        <div>
+            <a id="men" class="nav-items" href="#" data-value="men" style="border-bottom-color: #ee5f73;">men</a>
+            <a id="women" class="nav-items" href="#" data-value="women" style="border-bottom-color: #fb56c1;">women</a>
+            <a id="kids" class="nav-items" href="#" data-value="kids" style="border-bottom-color: #f26a10;">kids</a>
+            <a id="homeandliving" class="nav-items" href="#" data-value="homeandliving"
+                style="border-bottom-color: #f26a10;">home & living</a>
+            <a id="offers" class="nav-items" href="#" data-value="offers"
+                style="border-bottom-color: #0db7af;">offers</a>
+            <a id="closeButton" href="#" class="btn-closed" style="color:black">&times;</a>
+        </div>
+        <div id="search">
+            <div style="display: flex;">
+                <i class="fas fa-search"></i>
+                <input id="search-bar" type="text" placeholder="Search for products">
+            </div>
+            <div class="autocomplete-box"></div>
+        </div>
     </nav>
     <div id="background-fade">
         <div id="item-box">
@@ -25,7 +38,7 @@
             </div>
         </div>
     </div>
-
+    <script src="jsonData.js"></script>
     <script src="navbar.js"></script>
 </body>
 
