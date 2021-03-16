@@ -1,5 +1,5 @@
 const navItems = document.querySelectorAll('.nav-items');
-[...navItems].map((navItem)=>{
+[...navItems].map((navItem) => {
     navItem.addEventListener("click", showClothes);
 });
 
@@ -14,25 +14,25 @@ function parsingItems(itemName) {
     let uniqueValue = 1;
 
     if (itemName == 'men')
-        section(menSection,uniqueValue);
+        section(menSection, uniqueValue);
     else if (itemName == 'women')
-        section(womenSection,uniqueValue); 
+        section(womenSection, uniqueValue);
     else if (itemName == 'kids')
-        section(kidsSection,uniqueValue);
+        section(kidsSection, uniqueValue);
     else if (itemName == 'homeandliving')
-        section(homeAndLivingSection,uniqueValue);
+        section(homeAndLivingSection, uniqueValue);
     else if (itemName == 'offers') {
         const offersJsonData = Object.keys(offersSection);
         const offersJsonValue = Object.values(offersSection);
         let htmz = "";
         const checkEmpty = (ele) => ele === '';
         if (!offersJsonValue.every(checkEmpty)) {
-            offersJsonData.map((offerKeys,index)=>{
+            offersJsonData.map((offerKeys, index) => {
                 if (offersSection[offerKeys] != '') {
                     htmz += (index % 2 != 0) ? `<ul class='items items-even'>` : `<ul class='items items-odd'>`;
                     htmz += `<li class='item-category' style='color:#f26a10'>${offerKeys}</li>
                             <ul class='item-sub-category'>`;
-                    offersSection[offerKeys].map((value)=>{
+                    offersSection[offerKeys].map((value) => {
                         htmz += `<li><a href=''>${value}</a></li>`;
                     })
                     htmz += `<hr class='hr-line'>
@@ -41,48 +41,48 @@ function parsingItems(itemName) {
                 }
             });
             document.getElementById("items-data").innerHTML = htmz;
-        }else
+        } else
             document.getElementById("items-data").innerHTML = "<div style='text-align:center;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:green;opacity:0.7;'>We Don't have any offers right now for you!!!</div>";
     }
 }
 
-let section = (sectionValue,uniqueValue)=>{
+let section = (sectionValue, uniqueValue) => {
     let htmz = "";
     const sectionData = Object.keys(sectionValue);
-    sectionData.map((value,index)=>{
-            htmz += (index % 2 != 0) ? `<ul class='items items-even'>` : `<ul class='items items-odd'>`;
-            htmz += `<li class='item-category' style='color:#ee5f73'>${value}</li>
+    sectionData.map((value, index) => {
+        htmz += (index % 2 != 0) ? `<ul class='items items-even'>` : `<ul class='items items-odd'>`;
+        htmz += `<li class='item-category' style='color:#ee5f73'>${value}</li>
                     <ul class='item-sub-category'>`;
-            for (const [key, value] of Object.entries(sectionValue[sectionData[index]])) {
-                let clothesKey = key;
-                let clothesValue = value;
-                htmz += `<li class='' onclick=toggleData('${uniqueValue}')><a href='#'>${clothesKey}<i class='fas fa-chevron-down'></a></i></li>
+        for (const [key, value] of Object.entries(sectionValue[sectionData[index]])) {
+            let clothesKey = key;
+            let clothesValue = value;
+            htmz += `<li class='' onclick=toggleData('${uniqueValue}')><a href='#'>${clothesKey}<i class='fas fa-chevron-down'></a></i></li>
                         <div id=${uniqueValue} class='dropdown-content'>`;
-                
-                [...clothesValue].map(value => {
-                    htmz += `<li style='margin-left:15px;'><a href='#'>${value}</a></li>`;
-                });
-                uniqueValue++;
-                htmz += `</div>`;
-            }
 
-            htmz += `<hr class='hr-line'>
+            [...clothesValue].map(value => {
+                htmz += `<li style='margin-left:15px;'><a data-value="${value}" onclick="productPage('${value}')" href='#'>${value}</a></li>`;
+            });
+            uniqueValue++;
+            htmz += `</div>`;
+        }
+
+        htmz += `<hr class='hr-line'>
                     </ul>
                     </ul>`;
-        });
-        uniqueValue++;
-        document.getElementById("items-data").innerHTML = htmz;
+    });
+    uniqueValue++;
+    document.getElementById("items-data").innerHTML = htmz;
 }
 
-const sectionArray = ['men','women','kids','homeandliving','offers'];
+const sectionArray = ['men', 'women', 'kids', 'homeandliving', 'offers'];
 
-const toggleActive = (sectionValue,currentElement)=>{
+const toggleActive = (sectionValue, currentElement) => {
     currentElement.classList.add('active');
-    sectionArray.map((ele)=>{
-        if(sectionValue != ele){
+    sectionArray.map((ele) => {
+        if (sectionValue != ele) {
             document.getElementById(ele).classList.remove('active');
         }
-    });    
+    });
 }
 
 function showClothes(event) {
@@ -102,29 +102,29 @@ function hideClothes() {
     document.getElementById('closeButton').style.visibility = 'hidden';
 
     /*hiding if any active class is there*/
-    sectionArray.map((ele)=>{
+    sectionArray.map((ele) => {
         document.getElementById(ele).classList.remove('active');
     });
 }
 
 function toggleData(id) {
     const showValue = document.getElementById(id).classList.toggle("show");
-    
-    if(this.event.target.nodeName == 'A' || this.event.target.nodeName == 'I')
+
+    if (this.event.target.nodeName == 'A' || this.event.target.nodeName == 'I')
         this.event.target.parentElement.classList.toggle('item-bolded');
     else
         this.event.target.firstElementChild.classList.toggle('item-bolded');
-      
-    if(showValue){
-        if(this.event.target.firstElementChild)
+
+    if (showValue) {
+        if (this.event.target.firstElementChild)
             this.event.target.firstElementChild.style.transform = 'rotate(0deg)';
-        else    
+        else
             this.event.target.style.transform = 'rotate(0deg)';
     }
-    else{
-        if(this.event.target.firstElementChild)
+    else {
+        if (this.event.target.firstElementChild)
             this.event.target.firstElementChild.style.transform = 'rotate(-90deg)';
-        else    
+        else
             this.event.target.style.transform = 'rotate(-90deg)';
     }
 }
@@ -133,28 +133,87 @@ const searchWrapper = document.querySelector('#search');
 const inputBox = document.querySelector('#search-bar');
 const suggBox = document.querySelector('.autocomplete-box');
 
-inputBox.onfocus = ()=>{
+inputBox.onfocus = () => {
     hideClothes();
 }
 
-inputBox.onkeyup = (e)=>{
+inputBox.onkeyup = (e) => {
     let userData = e.target.value;
     let searchArray = [];
-    if(userData){
-        searchArray = products.searchItems.filter((data)=>{
+    if (userData) {
+        searchArray = products.searchItems.filter((data) => {
             return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
         });
-        searchArray = searchArray.map((data)=>{
+        searchArray = searchArray.map((data) => {
             return data = `<li>${data}</li>`;
         });
         searchWrapper.classList.add('activate');
-    }else
+    } else
         searchWrapper.classList.remove('activate');
 
     showSuggestions(searchArray);
 }
 
-function showSuggestions(list){
+function showSuggestions(list) {
     let listData = !list.length ? `<li>Sorry,product not available</li>` : list.join('');
     suggBox.innerHTML = listData;
+}
+
+let selectedFilter= [];
+
+function productPage(val) {
+    hideClothes();
+    let productList = productsList[val];
+    
+    let fetchedProduct = '<div class="container">';
+    fetchedProduct += 
+            `<div class="product-filters">`
+                for (const [filterName, filterValues] of Object.entries(filterList)){
+                    fetchedProduct += `<div>`;
+                    fetchedProduct += `<h3 class="filter-name">${filterName}</h3>`;
+                    filterValues.map((filterValue)=>{
+                fetchedProduct += `
+                        <div class="filter">
+                        <input type="checkbox" onclick="filterData('${filterValue}')"><span>${filterValue}</span>
+                    </div>`
+                    })
+                    fetchedProduct +=`</div>`;
+                }
+                fetchedProduct +=`</div>`;
+        fetchedProduct +=
+        `<div class="product-container">`;
+        productList.map((product) => {
+            if(selectedFilter.length == 0){
+                fetchedProduct += `<div class="product-card">
+                    <img src="${product.image}" alt="">
+                    <div class="product-details">
+                        <h3 class="product-brand">${product.name}</h3>
+                        <p class="product-desc">${product.description}</p>
+                        <p class="product-price">${product.price}</p>
+                    </div>
+                </div>`;
+            }else{
+                selectedFilter.map((check)=>{
+                if(check == product.name){
+                    fetchedProduct += `<div class="product-card">
+                        <img src="${product.image}" alt="">
+                        <div class="product-details">
+                            <h3 class="product-brand">${product.name}</h3>
+                            <p class="product-desc">${product.description}</p>
+                            <p class="product-price">${product.price}</p>
+                        </div>
+                    </div>`;
+                }
+                });
+            }
+        })
+        fetchedProduct += `</div>;
+     </div>`;
+
+    document.getElementById('load-products').innerHTML = fetchedProduct;
+    document.body.style.backgroundImage = 'none';
+}
+
+function filterData(value){
+    selectedFilter.push(value);
 }

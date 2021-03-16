@@ -189,6 +189,7 @@ nav a{
     color:#696e79;
     opacity: 0;
     display: none;
+    overflow:auto;
 }
 
 .autocomplete-box > li{
@@ -240,6 +241,7 @@ nav a{
 
     .autocomplete-box{
         text-align: left;
+        overflow:auto;
     }
 }
 
