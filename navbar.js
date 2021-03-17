@@ -159,61 +159,107 @@ function showSuggestions(list) {
     suggBox.innerHTML = listData;
 }
 
-let selectedFilter= [];
+let fetchFilter = '';
+function productPage(val,filterActive='') {
 
-function productPage(val) {
     hideClothes();
     let productList = productsList[val];
-    
-    let fetchedProduct = '<div class="container">';
-    fetchedProduct += 
-            `<div class="product-filters">`
-                for (const [filterName, filterValues] of Object.entries(filterList)){
-                    fetchedProduct += `<div>`;
-                    fetchedProduct += `<h3 class="filter-name">${filterName}</h3>`;
-                    filterValues.map((filterValue)=>{
-                fetchedProduct += `
-                        <div class="filter">
-                        <input type="checkbox" onclick="filterData('${filterValue}')"><span>${filterValue}</span>
-                    </div>`
-                    })
-                    fetchedProduct +=`</div>`;
-                }
-                fetchedProduct +=`</div>`;
-        fetchedProduct +=
-        `<div class="product-container">`;
-        productList.map((product) => {
-            if(selectedFilter.length == 0){
-                fetchedProduct += `<div class="product-card">
-                    <img src="${product.image}" alt="">
-                    <div class="product-details">
-                        <h3 class="product-brand">${product.name}</h3>
-                        <p class="product-desc">${product.description}</p>
-                        <p class="product-price">${product.price}</p>
-                    </div>
-                </div>`;
-            }else{
-                selectedFilter.map((check)=>{
-                if(check == product.name){
-                    fetchedProduct += `<div class="product-card">
-                        <img src="${product.image}" alt="">
-                        <div class="product-details">
-                            <h3 class="product-brand">${product.name}</h3>
-                            <p class="product-desc">${product.description}</p>
-                            <p class="product-price">${product.price}</p>
-                        </div>
-                    </div>`;
-                }
-                });
-            }
-        })
-        fetchedProduct += `</div>;
-     </div>`;
+    let fetchedProduct = '';
 
-    document.getElementById('load-products').innerHTML = fetchedProduct;
+    if(filterActive != true){
+        for (const [filterName, filterValues] of Object.entries(filterList)){
+            fetchFilter += `<div>`;
+            fetchFilter += `<h3 class="filter-name">${filterName}</h3>`;
+            filterValues.map((filterValue)=>{
+                fetchFilter += `
+                <div class="filter">
+                <input type="checkbox" onclick="filterData('${filterValue}','${val}')"><span>${filterValue}</span>
+            </div>`
+            })
+            fetchFilter +=`</div>`;
+        }
+    }
+        productList.map((product) => {
+            fetchedProduct += fetchingProducts(product);
+        })
+
+    document.getElementById('product-filters').innerHTML = fetchFilter;
+    document.getElementById('product-container').innerHTML = fetchedProduct;
     document.body.style.backgroundImage = 'none';
 }
+let selectedFilter= [];
 
-function filterData(value){
-    selectedFilter.push(value);
+function filterData(value,selectedSection){
+    let fetchedProduct;
+    let productList = productsList[selectedSection];
+
+    if(this.event.target.checked)
+        selectedFilter.push(value);
+    else
+        selectedFilter = selectedFilter.filter(item=>item!=value);
+
+    let finalPriceValues;
+    fetchedProduct = '';
+
+    if(value.slice(0,3) == 'Rs.'){
+        finalPriceValues = priceSplit(selectedFilter);
+    }else{
+        finalPriceValues = '';
+    }
+    
+    productList.map((product) => {
+        
+        let comparePrice = (product.price).slice(3);
+        if(comparePrice >= finalPriceValues[0] && comparePrice <= finalPriceValues[1]){
+            fetchedProduct += fetchingProducts(product);
+        }
+        
+        selectedFilter.map((check)=>{
+            if(check == product.name || check == product.color || check.slice(0,3) == product.discount)
+                fetchedProduct += fetchingProducts(product);
+        });
+    })
+
+    if(selectedFilter.length == 0){
+        productPage(selectedSection,true);
+        document.getElementById('product-container').style.display = '';
+        document.getElementById('filter-products').style.display = 'none';
+    }else{
+        document.getElementById('product-container').style.display = 'none';
+        document.getElementById('filter-products').style.display = '';
+        document.getElementById('filter-products').innerHTML = fetchedProduct;
+    }
 }
+
+function fetchingProducts(product){
+    return `<div class="product-card">
+                <img src="${product.image}" alt="">
+                <div id="product-details" class="product-details">
+                    <h3 class="product-brand">${product.name}</h3>
+                    <p class="product-desc">${product.description}</p>
+                    <p class="product-price">${product.price}<span class="product-discount"> (${product.discount} OFF)</span></p>
+                </div>
+            </div>`;
+}
+
+function priceSplit(filterArray){
+    let priceArray = [];
+    filterArray.map((value)=>{
+        let filterPrice = value;
+        let priceSplit = filterPrice.split(' ');
+        let priceFirstValue = priceSplit[0].slice(3);
+        let priceSecondValue = priceSplit[2].slice(3);
+        priceArray.push(priceFirstValue);
+        priceArray.push(priceSecondValue);
+    });
+
+    priceArray = priceArray.filter((value, index, self)=>{
+        return self.indexOf(value) === index;
+    })
+
+    let minPrice = Math.min(...priceArray);
+    let maxPrice = Math.max(...priceArray);
+
+    return [minPrice, maxPrice];
+}
+

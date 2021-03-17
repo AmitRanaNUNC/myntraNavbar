@@ -249,49 +249,57 @@ let productsList = {
                 "name": "HRX by Hrithik Roshan",
                 "description": "Rapid Dry T-Shirt",
                 "price": "Rs.499",
-                "image": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/5842076/2018/12/20/353cd269-5498-4aa9-a6ca-c503fcd2f2c61545286560719-HRX-by-Hrithik-Roshan-Men-White-Rapid-Dry-Camo-Training-T-sh-1.jpg"
+                "image": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/5842076/2018/12/20/353cd269-5498-4aa9-a6ca-c503fcd2f2c61545286560719-HRX-by-Hrithik-Roshan-Men-White-Rapid-Dry-Camo-Training-T-sh-1.jpg",
+                "color":"Blue",
+                "discount":"10%"
             },
             {
                 "name": "WROGN",
                 "description": "Men Solid Slim Fit T-Shirt",
-                "price": "Rs.519",
-                "image": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/10188591/2019/9/26/70f45aeb-477e-48fb-b5e4-8820904196271569490421369-WROGN-Men-Burgundy-Solid-Slim-Fit-Round-Neck-T-shirt-9361569-1.jpg"
+                "price": "Rs.5119",
+                "image": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/10188591/2019/9/26/70f45aeb-477e-48fb-b5e4-8820904196271569490421369-WROGN-Men-Burgundy-Solid-Slim-Fit-Round-Neck-T-shirt-9361569-1.jpg",
+                "color":"Grey",
+                "discount":"20%"
             },
             {
                 "name": "Campus Sutra",
                 "description": "Colourblocked Rounded Neck T-Shirt",
-                "price": "Rs.427",
-                "image": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/10016983/2019/6/20/b5caaca7-b5e8-4134-9283-65473a2388031561026348090-Campus-Sutra-Men-Blue-Colourblocked-Round-Neck-T-shirt-99915-1.jpg"
+                "price": "Rs.1427",
+                "image": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/10016983/2019/6/20/b5caaca7-b5e8-4134-9283-65473a2388031561026348090-Campus-Sutra-Men-Blue-Colourblocked-Round-Neck-T-shirt-99915-1.jpg",
+                "color":"Blue",
+                "discount":"20%"
             },
             {
                 "name": "Roaster",
                 "description": "Printed Round Neck T-Shirt",
-                "price": "Rs.384",
-                "image": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/1700944/2019/6/8/972c9498-3a37-4d5d-976c-4493b4d5c0021559989322793-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Round-Neck-T-Shirt--1.jpg"
+                "price": "Rs.1384",
+                "image": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/1700944/2019/6/8/972c9498-3a37-4d5d-976c-4493b4d5c0021559989322793-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Round-Neck-T-Shirt--1.jpg",
+                "color":"Blue",
+                "discount":"30%"
             },
             {
-                "name": "HRX by Hrithik Roshan",
+                "name": "Roaster",
                 "description": "Rapid Dry T-Shirt",
-                "price": "Rs.499",
-                "image": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/5842076/2018/12/20/353cd269-5498-4aa9-a6ca-c503fcd2f2c61545286560719-HRX-by-Hrithik-Roshan-Men-White-Rapid-Dry-Camo-Training-T-sh-1.jpg"
-            },
-            {
-                "name": "WROGN",
-                "description": "Men Solid Slim Fit T-Shirt",
-                "price": "Rs.519",
-                "image": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/10188591/2019/9/26/70f45aeb-477e-48fb-b5e4-8820904196271569490421369-WROGN-Men-Burgundy-Solid-Slim-Fit-Round-Neck-T-shirt-9361569-1.jpg"
+                "price": "Rs.999",
+                "image": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/5842076/2018/12/20/353cd269-5498-4aa9-a6ca-c503fcd2f2c61545286560719-HRX-by-Hrithik-Roshan-Men-White-Rapid-Dry-Camo-Training-T-sh-1.jpg",
+                "color":"White",
+                "discount":"10%"
             },
             {
                 "name": "Puma",
                 "description": "Colourblocked Rounded Neck T-Shirt",
-                "price": "Rs.427",
-                "image": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/10016983/2019/6/20/b5caaca7-b5e8-4134-9283-65473a2388031561026348090-Campus-Sutra-Men-Blue-Colourblocked-Round-Neck-T-shirt-99915-1.jpg"
+                "price": "Rs.4127",
+                "image": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/10016983/2019/6/20/b5caaca7-b5e8-4134-9283-65473a2388031561026348090-Campus-Sutra-Men-Blue-Colourblocked-Round-Neck-T-shirt-99915-1.jpg",
+                "color":"Black",
+                "discount":"40%"
             },
             {
                 "name": "HRX by Hrithik Roshan",
                 "description": "Printed Round Neck T-Shirt",
-                "price": "Rs.384",
-                "image": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/1700944/2019/6/8/972c9498-3a37-4d5d-976c-4493b4d5c0021559989322793-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Round-Neck-T-Shirt--1.jpg"
+                "price": "Rs.13384",
+                "image": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/1700944/2019/6/8/972c9498-3a37-4d5d-976c-4493b4d5c0021559989322793-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Round-Neck-T-Shirt--1.jpg",
+                "color":"Grey",
+                "discount":"20%"
             },
         ],
     "Causal Shirts":
@@ -300,32 +308,40 @@ let productsList = {
                 "name": "HIGHLANDER",
                 "description": "Slim Fit Casual Shirt",
                 "price": "Rs.589",
-                "image": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/1291760/2017/12/5/11512469309123-Highlander-Dark-Green-Slim-Fit-Casual-Shirt-5071512469308877-1.jpg"
+                "image": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/1291760/2017/12/5/11512469309123-Highlander-Dark-Green-Slim-Fit-Casual-Shirt-5071512469308877-1.jpg",
+                "color":"Navy Blue",
+                "discount":"10%"
             },
             {
                 "name": "Dennis Lingo",
                 "description": "Men Slim Fit Casual Shirt",
                 "price": "Rs.628",
-                "image": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/7488102/2019/8/22/8002a744-0dad-4dbb-9481-cf0090134c3b1566454086786-Dennis-Lingo-Men-Pink-Slim-Fit-Solid-Casual-Shirt-9891566454-1.jpg"
+                "image": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/7488102/2019/8/22/8002a744-0dad-4dbb-9481-cf0090134c3b1566454086786-Dennis-Lingo-Men-Pink-Slim-Fit-Solid-Casual-Shirt-9891566454-1.jpg",
+                "color":"Grey",
+                "discount":"10%"
             },
             {
                 "name": "Roaster",
                 "description": "Cotton Checked Casual Shirt",
                 "price": "Rs.766",
-                "image": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/1667044/2019/2/28/2781f021-536a-44ca-bc83-42c456bca95f1551335771557-Roadster-Men-Navy--Grey-Checked-Casual-Shirt-341551335769426-1.jpg"
+                "image": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/1667044/2019/2/28/2781f021-536a-44ca-bc83-42c456bca95f1551335771557-Roadster-Men-Navy--Grey-Checked-Casual-Shirt-341551335769426-1.jpg",
+                "color":"Green",
+                "discount":"20%"
             },
             {
                 "name": "HERE&NOW",
                 "description": "Men Regular Fit Casual Shirt",
                 "price": "Rs.1049",
-                "image": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/2414313/2018/3/13/11520926368526-HERENOW-Men-Red--Black-Regular-Fit-Checked-Casual-Shirt-8881520926368447-1.jpg"
+                "image": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/2414313/2018/3/13/11520926368526-HERENOW-Men-Red--Black-Regular-Fit-Checked-Casual-Shirt-8881520926368447-1.jpg",
+                "color":"Black",
+                "discount":"10%"
             }, 
         ]    
 }
 
 let filterList = {
-    "BRAND":['Roaster','Puma','Parx','ColourPlus','United Colors of Benetton','Blackberrys','Flying Machine','Louis Philippe Sport','Mast & Harbour'],
+    "BRAND":['Roaster','Puma','WROGN','ColourPlus','United Colors of Benetton','Blackberrys','Flying Machine','Louis Philippe Sport','Mast & Harbour'],
     "PRICE":['Rs.161 to Rs.3521','Rs.3521 to Rs.6881','Rs.6881 to Rs.10241','Rs.10241 to Rs.13601'],
     "COLOR":['Blue','Navy Blue','White','Black','Red','Grey','Green'],
-    "DISCOUNT RANGE":['10% and above','20% and above','30% and above','40% and above','50% and above','60% and above']
+    "DISCOUNT RANGE":['10% off','20% off','30% off','40% off','50% off','60% off']
 }
