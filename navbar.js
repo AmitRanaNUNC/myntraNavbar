@@ -158,13 +158,13 @@ function showSuggestions(list) {
     let listData = !list.length ? `<li>Sorry,product not available</li>` : list.join('');
     suggBox.innerHTML = listData;
 }
+let fetchFilter = '';
 
 function productPage(val, filterActive = '') {
 
     hideClothes();
     let productList = productsList[val];
     let finalProduct = '';
-    let fetchFilter = '';
 
     if (filterActive != true) {
         for (const [filterName, filterValues] of Object.entries(filterList)) {
@@ -193,6 +193,31 @@ let selectedFilter = {
     'COLOR': [],
     'DISCOUNT': []
 };
+
+function brandAndColorFilter(){
+    if (selectedFilter.BRAND.length != 0) {
+        if (fetchedProduct.length != 0) {
+            dummyArray = fetchedProduct;
+            fetchedProduct = [];
+            dummyArray.map((product) => {
+                selectedFilter.BRAND.map((check) => {
+                    if (check == product.name) {
+                        fetchedProduct.push(product);
+                    }else
+                        fetchedProduct.push({name:''});
+                });
+            })
+        }else{
+            productList.map((product) => {
+                selectedFilter.BRAND.map((check) => {
+                    if (check == product.name) {
+                        fetchedProduct.push(product);
+                    }
+                });
+            })
+        }
+    }
+}
 
 function filterData(value, selectedSection, filterSection) {
     let fetchedProduct;
