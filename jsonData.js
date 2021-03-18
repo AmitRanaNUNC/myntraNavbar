@@ -272,7 +272,7 @@ let productsList = {
             {
                 "name": "Roaster",
                 "description": "Printed Round Neck T-Shirt",
-                "price": "Rs.1384",
+                "price": "Rs.9384",
                 "image": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/1700944/2019/6/8/972c9498-3a37-4d5d-976c-4493b4d5c0021559989322793-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Round-Neck-T-Shirt--1.jpg",
                 "color":"Blue",
                 "discount":"30%"
@@ -282,7 +282,7 @@ let productsList = {
                 "description": "Rapid Dry T-Shirt",
                 "price": "Rs.999",
                 "image": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/5842076/2018/12/20/353cd269-5498-4aa9-a6ca-c503fcd2f2c61545286560719-HRX-by-Hrithik-Roshan-Men-White-Rapid-Dry-Camo-Training-T-sh-1.jpg",
-                "color":"White",
+                "color":"Blue",
                 "discount":"10%"
             },
             {
@@ -343,5 +343,5 @@ let filterList = {
     "BRAND":['Roaster','Puma','WROGN','ColourPlus','United Colors of Benetton','Blackberrys','Flying Machine','Louis Philippe Sport','Mast & Harbour'],
     "PRICE":['Rs.161 to Rs.3521','Rs.3521 to Rs.6881','Rs.6881 to Rs.10241','Rs.10241 to Rs.13601'],
     "COLOR":['Blue','Navy Blue','White','Black','Red','Grey','Green'],
-    "DISCOUNT RANGE":['10% off','20% off','30% off','40% off','50% off','60% off']
+    "DISCOUNT":['10% off','20% off','30% off','40% off','50% off','60% off']
 }

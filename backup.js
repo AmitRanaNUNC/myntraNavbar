@@ -159,170 +159,79 @@ function showSuggestions(list) {
     suggBox.innerHTML = listData;
 }
 
-function productPage(val, filterActive = '') {
+let fetchFilter = '';
+function productPage(val,filterActive='') {
 
     hideClothes();
     let productList = productsList[val];
-    let finalProduct = '';
-    let fetchFilter = '';
+    let fetchedProduct = '';
 
-    if (filterActive != true) {
-        for (const [filterName, filterValues] of Object.entries(filterList)) {
+    if(filterActive != true){
+        for (const [filterName, filterValues] of Object.entries(filterList)){
             fetchFilter += `<div>`;
             fetchFilter += `<h3 class="filter-name">${filterName}</h3>`;
-            filterValues.map((filterValue) => {
+            filterValues.map((filterValue)=>{
                 fetchFilter += `
                 <div class="filter">
-                <input type="checkbox" onclick="filterData('${filterValue}','${val}','${filterName}')"><span>${filterValue}</span>
+                <input type="checkbox" onclick="filterData('${filterValue}','${val}')"><span>${filterValue}</span>
             </div>`
             })
-            fetchFilter += `</div>`;
+            fetchFilter +=`</div>`;
         }
     }
-    productList.map((product) => {
-        finalProduct += fetchingProducts(product);
-    })
+        productList.map((product) => {
+            fetchedProduct += fetchingProducts(product);
+        })
 
     document.getElementById('product-filters').innerHTML = fetchFilter;
-    document.getElementById('product-container').innerHTML = finalProduct;
+    document.getElementById('product-container').innerHTML = fetchedProduct;
     document.body.style.backgroundImage = 'none';
 }
-let selectedFilter = {
-    'BRAND': [],
-    'PRICE': [],
-    'COLOR': [],
-    'DISCOUNT': []
-};
+let selectedFilter= [];
 
-function filterData(value, selectedSection, filterSection) {
+function filterData(value,selectedSection){
     let fetchedProduct;
     let productList = productsList[selectedSection];
 
-    if (this.event.target.checked)
-        selectedFilter[filterSection].push(value);
+    if(this.event.target.checked)
+        selectedFilter.push(value);
     else
-        selectedFilter[filterSection] = selectedFilter[filterSection].filter(item => item != value);
+        selectedFilter = selectedFilter.filter(item=>item!=value);
 
     let finalPriceValues;
-    fetchedProduct = [];
-    let dummyArray = [];
-    let finalProduct = '';
+    fetchedProduct = '';
 
-    if (selectedFilter.BRAND.length != 0) {
-        if (fetchedProduct.length != 0) {
-            dummyArray = fetchedProduct;
-            fetchedProduct = [];
-            dummyArray.map((product) => {
-                selectedFilter.BRAND.map((check) => {
-                    if (check == product.name) {
-                        fetchedProduct.push(product);
-                    }else
-                        fetchedProduct.push({name:''});
-                });
-            })
-        }else{
-            productList.map((product) => {
-                selectedFilter.BRAND.map((check) => {
-                    if (check == product.name) {
-                        fetchedProduct.push(product);
-                    }
-                });
-            })
-        }
+    if(value.slice(0,3) == 'Rs.'){
+        finalPriceValues = priceSplit(selectedFilter);
+    }else{
+        finalPriceValues = '';
     }
-
-    if (selectedFilter.COLOR.length != 0) {
-        if (fetchedProduct.length != 0) {
-            dummyArray = fetchedProduct;
-            fetchedProduct = [];
-            dummyArray.map((product) => {
-                selectedFilter.COLOR.map((check) => {
-                    if (check == product.color) {
-                        fetchedProduct.push(product);
-                    }else
-                        fetchedProduct.push({name:''});
-                });
-            })
-        } else {
-            productList.map((product) => {
-                selectedFilter.COLOR.map((check) => {
-                    if (check == product.color) {
-                        fetchedProduct.push(product);
-                    }
-                });
-            })
+    productList.map((product) => {
+        
+        let comparePrice = (product.price).slice(3);
+        if(comparePrice >= finalPriceValues[0] && comparePrice <= finalPriceValues[1]){
+            fetchedProduct += fetchingProducts(product);
         }
-    }
+        selectedFilter.map((check)=>{
+            if(check == product.name || check == product.color || check.slice(0,3) == product.discount){
+                fetchedProduct += fetchingProducts(product);
+            }  
+        });
+    })
 
-    if (selectedFilter.PRICE.length != 0) {
-        if (selectedFilter['PRICE'].length != 0)
-            finalPriceValues = priceSplit(selectedFilter['PRICE']);
-        else
-            finalPriceValues = '';
-
-        if (fetchedProduct.length != 0) {
-            dummyArray = fetchedProduct;
-            fetchedProduct = [];
-            dummyArray.map((product) => {
-                let comparePrice = (product.price).slice(3);
-                if (comparePrice >= finalPriceValues[0] && comparePrice <= finalPriceValues[1]) {
-                    fetchedProduct.push(product);
-                }else
-                    fetchedProduct.push({name:''});
-            })
-        } else {
-            productList.map((product) => {
-                let comparePrice = (product.price).slice(3);
-                if (comparePrice >= finalPriceValues[0] && comparePrice <= finalPriceValues[1]) {
-                    fetchedProduct.push(product);
-                }
-            })
-        }
-    }
-
-    if (selectedFilter.DISCOUNT.length != 0) {
-        if (fetchedProduct.length != 0) {
-            dummyArray = fetchedProduct;
-            fetchedProduct = [];
-            dummyArray.map((product) => {
-                selectedFilter.DISCOUNT.map((check) => {
-                    if (check.slice(0, 3) == product.discount) {
-                        fetchedProduct.push(product);
-                    }else
-                        fetchedProduct.push({name:''});
-                });
-            })
-        } else {
-            productList.map((product) => {
-                selectedFilter.DISCOUNT.map((check) => {
-                    if (check.slice(0, 3) == product.discount) {
-                        fetchedProduct.push(product);
-                    }
-                });
-            })
-        }
-    }
-    fetchedProduct.map((data) => {
-        if(data.name == '')
-            finalProduct += fetchingProducts(data);
-        else    
-            finalProduct += fetchingProducts(data);
-    });
-    
-    if (fetchedProduct.length == 0) {
-        productPage(selectedSection, true);
+    if(selectedFilter.length == 0){
+        productPage(selectedSection,true);
         document.getElementById('product-container').style.display = '';
         document.getElementById('filter-products').style.display = 'none';
-    } else {
+    }else{
         document.getElementById('product-container').style.display = 'none';
         document.getElementById('filter-products').style.display = '';
-        document.getElementById('filter-products').innerHTML = finalProduct;
+        document.getElementById('filter-products').innerHTML = fetchedProduct;
     }
 }
 
-function fetchingProducts(product) {
-    if(product.name != ''){
-        return `<div class="product-card">
+function fetchingProducts(product){
+    return `<div class="product-card">
                 <img src="${product.image}" alt="">
                 <div id="product-details" class="product-details">
                     <h3 class="product-brand">${product.name}</h3>
@@ -330,17 +239,11 @@ function fetchingProducts(product) {
                     <p class="product-price">${product.price}<span class="product-discount"> (${product.discount} OFF)</span></p>
                 </div>
             </div>`;
-    }else{
-        return `<div class="product-card" style="color:green;position:absolute;left:50%;top:50%;bottom:50%;translate:transformY(-50%,-50%)">
-                    No Products available for the required filter!!!
-                </div>`;
-    }
-    
 }
 
-function priceSplit(filterArray) {
+function priceSplit(filterArray){
     let priceArray = [];
-    filterArray.map((value) => {
+    filterArray.map((value)=>{
         let filterPrice = value;
         let priceSplit = filterPrice.split(' ');
         let priceFirstValue = priceSplit[0].slice(3);
@@ -349,7 +252,7 @@ function priceSplit(filterArray) {
         priceArray.push(priceSecondValue);
     });
 
-    priceArray = priceArray.filter((value, index, self) => {
+    priceArray = priceArray.filter((value, index, self)=>{
         return self.indexOf(value) === index;
     })
 
