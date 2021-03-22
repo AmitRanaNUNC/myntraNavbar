@@ -8,7 +8,7 @@ window.addEventListener('click', function (event) {
         hideClothes();
 });
 
-document.getElementById('closeButton').addEventListener('click', hideClothes);
+// document.getElementById('closeButton').addEventListener('click', hideClothes);
 
 function parsingItems(itemName) {
     let uniqueValue = 1;
@@ -133,26 +133,26 @@ const searchWrapper = document.querySelector('#search');
 const inputBox = document.querySelector('#search-bar');
 const suggBox = document.querySelector('.autocomplete-box');
 
-inputBox.onfocus = () => {
-    hideClothes();
-}
+// inputBox.onfocus = () => {
+//     hideClothes();
+// }
 
-inputBox.onkeyup = (e) => {
-    let userData = e.target.value;
-    let searchArray = [];
-    if (userData) {
-        searchArray = products.searchItems.filter((data) => {
-            return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
-        });
-        searchArray = searchArray.map((data) => {
-            return data = `<li>${data}</li>`;
-        });
-        searchWrapper.classList.add('activate');
-    } else
-        searchWrapper.classList.remove('activate');
+// inputBox.onkeyup = (e) => {
+//     let userData = e.target.value;
+//     let searchArray = [];
+//     if (userData) {
+//         searchArray = products.searchItems.filter((data) => {
+//             return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
+//         });
+//         searchArray = searchArray.map((data) => {
+//             return data = `<li>${data}</li>`;
+//         });
+//         searchWrapper.classList.add('activate');
+//     } else
+//         searchWrapper.classList.remove('activate');
 
-    showSuggestions(searchArray);
-}
+//     showSuggestions(searchArray);
+// }
 
 function showSuggestions(list) {
     let listData = !list.length ? `<li>Sorry,product not available</li>` : list.join('');
@@ -276,6 +276,7 @@ function fetchingProducts(product) {
                     <h3 class="product-brand">${product.name}</h3>
                     <p class="product-desc">${product.description}</p>
                     <p class="product-price">${product.price}<span class="product-discount"> (${product.discount} OFF)</span></p>
+                    <button class="cart-button" onclick="productCart('${product.image}','${product.name}','${product.description}','${product.price}')">ADD TO CART</button>
                 </div>
             </div>`;
     } else {
@@ -295,7 +296,7 @@ function priceSplit(filterArray) {
         priceArray.push(priceFirstValue);
         priceArray.push(priceSecondValue);
     });
-    
+
     priceArray = priceArray.filter((value, index, self) => {
         return self.indexOf(value) === index;
     })
@@ -305,4 +306,46 @@ function priceSplit(filterArray) {
 
     return [minPrice, maxPrice];
 }
+
+var cartArray = [];
+
+function productCart(img, name, desc, price) {
+    let productAdded = {
+        'img': img,
+        'name': name,
+        'desc': desc,
+        'price': price
+    };
+    document.getElementById('cart-msg').innerHTML = 'Added to the Cart!!!';
+    cartArray.push(productAdded);
+    displayCart(cartArray);
+}
+
+console.log(cartArray);
+
+function displayCart(cart){
+    console.log(cart);
+    let finalCart;
+    cart.map((data) => {
+        finalCart += `<div class="cart-card">
+                <img class="cart-img" alt="">
+                <div id="product-details" class="product-details">
+                    <h3 class="product-brand">${data.name}</h3>
+                    <p class="product-desc">${data.desc}</p>
+                    <select name="" id="">
+                        <option value="">Qty</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div class="product-price">
+                    <p>${data.price}</p>
+                </div>
+            </div>`;
+    });
+}
+
 

@@ -12,7 +12,6 @@
         crossorigin="anonymous" />
     <link rel="stylesheet" href="productLanding.css">
 </head>
-
 <body>
     <nav id="navbar">
         <div>
@@ -24,7 +23,12 @@
             <a id="offers" class="nav-items" href="#" data-value="offers"
                 style="border-bottom-color: #0db7af;">offers</a>
             <a id="closeButton" href="#" class="btn-closed" style="color:black">&times;</a>
+            <a href="cart.html" onclick="displayCart()" class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">1</span>
+            </a>
         </div>
+        <div id="cart-msg"></div>
         <div id="search">
             <div style="display: flex;">
                 <i class="fas fa-search"></i>
