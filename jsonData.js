@@ -263,7 +263,7 @@ let productsList = {
             },
             {
                 "name": "Campus Sutra",
-                "description": "Colourblocked Rounded Neck T-Shirt",
+                "description": "Colourblocked Rounded",
                 "price": "Rs.1427",
                 "image": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/10016983/2019/6/20/b5caaca7-b5e8-4134-9283-65473a2388031561026348090-Campus-Sutra-Men-Blue-Colourblocked-Round-Neck-T-shirt-99915-1.jpg",
                 "color":"Blue",
@@ -287,7 +287,7 @@ let productsList = {
             },
             {
                 "name": "Puma",
-                "description": "Colourblocked Rounded Neck T-Shirt",
+                "description": "Colourblocked Rounded",
                 "price": "Rs.4127",
                 "image": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/10016983/2019/6/20/b5caaca7-b5e8-4134-9283-65473a2388031561026348090-Campus-Sutra-Men-Blue-Colourblocked-Round-Neck-T-shirt-99915-1.jpg",
                 "color":"Black",
