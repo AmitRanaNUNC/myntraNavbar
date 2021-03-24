@@ -8,12 +8,12 @@ function displayCart(cartItems) {
                 <div id="product-details" class="product-details">
                     <h3 class="product-brand">${cart.name}</h3>
                     <p class="product-desc">${cart.desc}</p>
-                    <select name="" id="" onchange="quantity(this.value,'${cart.price}','${cart.id}')" style="outline:none;border-radius:2px;background:#f5f5f6;border:none;text-align:Center;color:black;">
-                        <option value="1">Qty:1</option>
-                        <option value="2">Qty:2</option>
-                        <option value="3">Qty:3</option>
-                        <option value="4">Qty:4</option>
-                        <option value="5">Qty:5</option>
+                    <select name="" id="" onchange="quantity(this,this.value,'${cart.price}','${cart.id}')" style="outline:none;border-radius:2px;background:#f5f5f6;border:none;text-align:Center;color:black;">
+                        <option value="1" ${cart.qty ==1 ? 'selected' : ''}>Qty:1</option>
+                        <option value="2" ${cart.qty ==2 ? 'selected' : ''}>Qty:2</option>
+                        <option value="3" ${cart.qty ==3 ? 'selected' : ''}>Qty:3</option>
+                        <option value="4" ${cart.qty ==4 ? 'selected' : ''}>Qty:4</option>
+                        <option value="5" ${cart.qty ==5 ? 'selected' : ''}>Qty:5</option>
                     </select>
 
                     <div style="margin-top:55px;">
@@ -66,7 +66,7 @@ function displayPrice(totalPrice) {
     document.getElementById('cart-total').innerHTML = cartPrice;
 }
 
-function quantity(qty, price, id) {
+function quantity(val, qty, price, id) {
     let productPrice = parseInt(price.slice(3));
     let finalPrice = productPrice * qty;
     document.getElementById(id).innerHTML = `Rs.${finalPrice}`;
