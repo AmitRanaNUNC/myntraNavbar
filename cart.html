@@ -6,99 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
-    <link rel="stylesheet" href="productLanding.css">
-    <style>
-        .cart-container {
-            display: grid;
-            grid-template-columns: 80% 20%;
-            justify-items: center;
-        }
-
-        .cart-card {
-            display: flex;
-            padding: 10px;
-            border: 1px solid skyblue;
-            margin: 10px;
-            border-radius: 5px;
-            height: 150px;
-            position: relative;
-        }
-
-        .cart-total {
-            width: 100%;
-            margin-right: 300px;
-        }
-
-        .product-details {
-            margin: 10px;
-        }
-
-        .product-brand,
-        .product-desc {
-            margin-top: -10px;
-            line-height: 1;
-            font-size: 15px;
-        }
-
-        .product-brand {
-            font-weight: 500;
-        }
-
-        .product-price {
-            position: absolute;
-            right: 15px;
-            font-weight: 500;
-        }
-
-        .price-total {
-            margin-top: 15px;
-            font-size: 14px;
-        }
-
-        .cart-details {
-            font-weight: 500;
-            font-size: 15px;
-        }
-    </style>
+    <!-- <link rel="stylesheet" href="productLanding.css"> -->
+    <link rel="stylesheet" href="cart.css">
 </head>
-
 <body>
     <center>
         <h2>Shopping Cart</h2>
     </center>
+    <div style="position: absolute;top:50%;left:50%;color:green;transform: translate(-50%,-50%);" id="empty-cart"></div>
     <div class="cart-container">
-        <div id="cart-products" class="cart-products" style="width:65%;">
+        <div id="cart-products" class="cart-products">
 
         </div>
-        <div class="cart-total">
-            <div class="cart-details">
-                PRICE DETAILS
-            </div>
-            <div class="price-total">
-                <span>Total MRP</span>
-                <span style="float: right;">Rs.1798</span>
-            </div>
-            <div class="price-total">
-                <span>Shipping Charges</span>
-                <span style="float: right;">Rs.50</span>
-            </div>
-            <hr>
-            <div class="price-total">
-                <b>
-                    <span>Total Amount</span>
-                    <span style="float: right;">Rs.1848</span>
-                </b>
-            </div>
-            <button
-                style="width: 100%;padding:10px;margin-top:10px;background-color: #ff3f6c;color:white;border:none;font-size:14px;">CHECKOUT</button>
+        <div id="cart-total" class="cart-total">
+            
         </div>
     </div>
-    <script src="navbar.js"></script>
-    <script>
-        window.addEventListener('load',(event)=>{
-            displayCart();
-        });
-    </script>
+    <script src="cart.js"></script>
+
 </body>
 
 </html>

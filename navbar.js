@@ -8,7 +8,7 @@ window.addEventListener('click', function (event) {
         hideClothes();
 });
 
-// document.getElementById('closeButton').addEventListener('click', hideClothes);
+document.getElementById('closeButton').addEventListener('click', hideClothes);
 
 function parsingItems(itemName) {
     let uniqueValue = 1;
@@ -133,26 +133,26 @@ const searchWrapper = document.querySelector('#search');
 const inputBox = document.querySelector('#search-bar');
 const suggBox = document.querySelector('.autocomplete-box');
 
-// inputBox.onfocus = () => {
-//     hideClothes();
-// }
+inputBox.onfocus = () => {
+    hideClothes();
+}
 
-// inputBox.onkeyup = (e) => {
-//     let userData = e.target.value;
-//     let searchArray = [];
-//     if (userData) {
-//         searchArray = products.searchItems.filter((data) => {
-//             return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
-//         });
-//         searchArray = searchArray.map((data) => {
-//             return data = `<li>${data}</li>`;
-//         });
-//         searchWrapper.classList.add('activate');
-//     } else
-//         searchWrapper.classList.remove('activate');
+inputBox.onkeyup = (e) => {
+    let userData = e.target.value;
+    let searchArray = [];
+    if (userData) {
+        searchArray = products.searchItems.filter((data) => {
+            return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
+        });
+        searchArray = searchArray.map((data) => {
+            return data = `<li>${data}</li>`;
+        });
+        searchWrapper.classList.add('activate');
+    } else
+        searchWrapper.classList.remove('activate');
 
-//     showSuggestions(searchArray);
-// }
+    showSuggestions(searchArray);
+}
 
 function showSuggestions(list) {
     let listData = !list.length ? `<li>Sorry,product not available</li>` : list.join('');
@@ -160,7 +160,6 @@ function showSuggestions(list) {
 }
 
 function productPage(val, filterActive = '') {
-
     hideClothes();
     let productList = productsList[val];
     let finalProduct = '';
@@ -270,13 +269,13 @@ function priceFilter(fetchedProduct, dummyArray, selectedFilter, productList, fi
 
 function fetchingProducts(product) {
     if (product.name != '') {
-        return `<div class="product-card">
+        return `<div id="${product.productId}" class="product-card">
                 <img src="${product.image}" alt="">
                 <div id="product-details" class="product-details">
                     <h3 class="product-brand">${product.name}</h3>
                     <p class="product-desc">${product.description}</p>
                     <p class="product-price">${product.price}<span class="product-discount"> (${product.discount} OFF)</span></p>
-                    <button class="cart-button" onclick="productCart('${product.image}','${product.name}','${product.description}','${product.price}')">ADD TO CART</button>
+                    <button class="cart-button" onclick="productCart('${product.image}','${product.name}','${product.description}','${product.price}','${product.productId}')">ADD TO CART</button>
                 </div>
             </div>`;
     } else {
@@ -307,45 +306,37 @@ function priceSplit(filterArray) {
     return [minPrice, maxPrice];
 }
 
-var cartArray = [];
+let checkArray = JSON.parse(localStorage.getItem('cartItems'));
+let cartArray = checkArray != null ? checkArray : [];
 
-function productCart(img, name, desc, price) {
+function productCart(img, name, desc, price,productId) {
+
     let productAdded = {
+        'id':productId,
         'img': img,
         'name': name,
         'desc': desc,
-        'price': price
+        'price': price,
+        'qty':'1'
     };
-    document.getElementById('cart-msg').innerHTML = 'Added to the Cart!!!';
+    setInterval(() => {
+        document.getElementById('cart-msg').style.display = "none";
+    }, 1200);
+    document.getElementById('cart-msg').style.display = "block";
+    document.getElementById('cart-msg').innerHTML = 'Added to the Cart!!!';    
     cartArray.push(productAdded);
-    displayCart(cartArray);
+    
+    localStorage.setItem('cartItems', JSON.stringify(cartArray));
 }
 
-console.log(cartArray);
+setInterval(() => {
+    if (cartArray.length == 0)
+        document.getElementById('cart-count').style.display = "none";
+    else {
+        document.getElementById('cart-count').style.display = "block";
+        document.getElementById('cart-count').innerHTML = (cartArray.length);
+    }
+}, 100)
 
-function displayCart(cart){
-    console.log(cart);
-    let finalCart;
-    cart.map((data) => {
-        finalCart += `<div class="cart-card">
-                <img class="cart-img" alt="">
-                <div id="product-details" class="product-details">
-                    <h3 class="product-brand">${data.name}</h3>
-                    <p class="product-desc">${data.desc}</p>
-                    <select name="" id="">
-                        <option value="">Qty</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                </div>
-                <div class="product-price">
-                    <p>${data.price}</p>
-                </div>
-            </div>`;
-    });
-}
 
 

@@ -245,7 +245,7 @@ let products = {
 let productsList = {
     "T-Shirts":
         [
-            {
+            {   "productId":"1",
                 "name": "HRX by Hrithik Roshan",
                 "description": "Rapid Dry T-Shirt",
                 "price": "Rs.499",
@@ -254,6 +254,7 @@ let productsList = {
                 "discount":"10%"
             },
             {
+                "productId":"2",
                 "name": "WROGN",
                 "description": "Men Solid Slim Fit T-Shirt",
                 "price": "Rs.5119",
@@ -262,6 +263,7 @@ let productsList = {
                 "discount":"20%"
             },
             {
+                "productId":"3",
                 "name": "Campus Sutra",
                 "description": "Colourblocked Rounded",
                 "price": "Rs.1427",
@@ -270,6 +272,7 @@ let productsList = {
                 "discount":"20%"
             },
             {
+                "productId":"4",
                 "name": "Roaster",
                 "description": "Printed Round Neck T-Shirt",
                 "price": "Rs.9384",
@@ -278,6 +281,7 @@ let productsList = {
                 "discount":"30%"
             },
             {
+                "productId":"5",
                 "name": "Roaster",
                 "description": "Rapid Dry T-Shirt",
                 "price": "Rs.999",
@@ -286,6 +290,7 @@ let productsList = {
                 "discount":"10%"
             },
             {
+                "productId":"6",
                 "name": "Puma",
                 "description": "Colourblocked Rounded",
                 "price": "Rs.4127",
@@ -294,6 +299,7 @@ let productsList = {
                 "discount":"40%"
             },
             {
+                "productId":"7",
                 "name": "HRX by Hrithik Roshan",
                 "description": "Printed Round Neck T-Shirt",
                 "price": "Rs.13384",
@@ -305,6 +311,7 @@ let productsList = {
     "Causal Shirts":
         [
             {
+                "productId":"8",
                 "name": "HIGHLANDER",
                 "description": "Slim Fit Casual Shirt",
                 "price": "Rs.589",
@@ -313,6 +320,7 @@ let productsList = {
                 "discount":"10%"
             },
             {
+                "productId":"9",
                 "name": "Dennis Lingo",
                 "description": "Men Slim Fit Casual Shirt",
                 "price": "Rs.628",
@@ -321,6 +329,7 @@ let productsList = {
                 "discount":"10%"
             },
             {
+                "productId":"10",
                 "name": "Roaster",
                 "description": "Cotton Checked Casual Shirt",
                 "price": "Rs.766",
@@ -329,6 +338,7 @@ let productsList = {
                 "discount":"20%"
             },
             {
+                "productId":"11",
                 "name": "HERE&NOW",
                 "description": "Men Regular Fit Casual Shirt",
                 "price": "Rs.1049",
