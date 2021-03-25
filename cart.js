@@ -1,14 +1,14 @@
-const cartItems = JSON.parse(localStorage.getItem('cartItems'));
+let cartItems = JSON.parse(localStorage.getItem('cartItems'));
 
 function displayCart(cartItems) {
     let finalCart = '';
     cartItems.map((cart, cartIndex) => {
         finalCart += `<div class="cart-card">
                 <img class="cart-img" alt="" src="${cart.img}">
-                <div id="product-details" class="product-details">
-                    <h3 class="product-brand">${cart.name}</h3>
-                    <p class="product-desc">${cart.desc}</p>
-                    <select name="" id="" onchange="quantity(this,this.value,'${cart.price}','${cart.id}')" style="outline:none;border-radius:2px;background:#f5f5f6;border:none;text-align:Center;color:black;">
+                <div id="cart-product-details" class="cart-product-details">
+                    <h3 class="cart-product-brand">${cart.name}</h3>
+                    <p class="cart-product-desc">${cart.desc}</p>
+                    <select name="" id="" onchange="quantity(this.value,'${cart.price}','${cart.id}')" style="outline:none;border-radius:2px;background:#f5f5f6;border:none;text-align:Center;color:black;">
                         <option value="1" ${cart.qty ==1 ? 'selected' : ''}>Qty:1</option>
                         <option value="2" ${cart.qty ==2 ? 'selected' : ''}>Qty:2</option>
                         <option value="3" ${cart.qty ==3 ? 'selected' : ''}>Qty:3</option>
@@ -20,7 +20,7 @@ function displayCart(cartItems) {
                         <span id="${cartIndex}" class="removeItem" onclick=removeItem(this.id)>REMOVE</span>
                     </div>
                     </div>
-                <div class="product-price">
+                <div class="cart-product-price">
                     <p id="${cart.id}">${cart.price}</p>
                 </div>
             </div>`;
@@ -66,7 +66,7 @@ function displayPrice(totalPrice) {
     document.getElementById('cart-total').innerHTML = cartPrice;
 }
 
-function quantity(val, qty, price, id) {
+function quantity(qty, price, id) {
     let productPrice = parseInt(price.slice(3));
     let finalPrice = productPrice * qty;
     document.getElementById(id).innerHTML = `Rs.${finalPrice}`;
@@ -90,6 +90,17 @@ function removeItem(id) {
 
 if (cartItems.length != 0)
     displayCart(cartItems);
-else {
+else
     document.getElementById('empty-cart').innerText = "No Items in the cart,please add some items!!!";
-}
+
+let modal = document.getElementById('modal');
+let cartBtn = document.getElementById('cartBtn');
+let closeBtn = document.getElementById('closeBtn');
+
+cartBtn.addEventListener('click', ()=>{
+    modal.style.display = 'block';
+});
+
+closeBtn.addEventListener('click', ()=>{
+    modal.style.display = 'none';
+});

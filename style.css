@@ -60,13 +60,13 @@ nav a{
     background-color:rgba(245,245,246,.4);
 }
 
-#background-fade{
+.background-fade{
     position: fixed;
     top:80px;
     bottom: 0;
     left:0;
     right:0;
-    z-index: 0;
+    z-index: 1;
     background-color: rgba(0,0,0,.3);
     visibility: hidden;
 }
@@ -205,6 +205,42 @@ nav a{
     opacity: 1;
     pointer-events: auto;
     display: block;
+}
+
+.modal{
+    display: none;
+    position: fixed;
+    z-index:2;
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    overflow:scroll;
+    background-color: rgba(0,0,0,0.5);
+
+}
+
+.cart-modal{
+    background-color:#f4f4f4;
+    margin:5% auto;
+    padding:10px;
+    width:80%;
+    border-radius: 5px;
+    height:75%;
+    overflow: auto;
+}
+
+.closeBtn{
+    color:#ccc;
+    float: right;
+    margin-right:2%;
+    font-size:30px;
+}
+
+.closeBtn:hover{
+    color:#000;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 @media screen and (max-width:850px){

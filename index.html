@@ -11,8 +11,21 @@
         integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
         crossorigin="anonymous" />
     <link rel="stylesheet" href="productLanding.css">
+    <link rel="stylesheet" href="cart.css">
 </head>
 <body>
+    <div id="modal" class="modal">
+        <div class="cart-modal">
+            <span id="closeBtn" class="closeBtn">&times;</span>
+            <div style="position: absolute;top:50%;left:50%;color:green;transform: translate(-50%,-50%);" id="empty-cart"></div>
+            <div class="cart-container">
+                <div id="cart-products" class="cart-products">
+                </div>
+                <div id="cart-total" class="cart-total">
+                </div>
+            </div>
+        </div>
+    </div>
     <nav id="navbar">
         <div>
             <a id="men" class="nav-items" href="#" data-value="men" style="border-bottom-color: #ee5f73;">men</a>
@@ -23,8 +36,8 @@
             <a id="offers" class="nav-items" href="#" data-value="offers"
                 style="border-bottom-color: #0db7af;">offers</a>
             <a id="closeButton" href="#" class="btn-closed" style="color:black">&times;</a>
-            <a href="cart.html" onclick="displayCart()" class="cart-icon">
-                <i class="fas fa-shopping-cart"></i>
+            <a class="cart-icon">
+                <i id="cartBtn" style="cursor: pointer;" class="fas fa-shopping-cart"></i>
                 <span id="cart-count" class="cart-count"></span>
             </a>
         </div>
@@ -37,7 +50,7 @@
             <div class="autocomplete-box"></div>
         </div>
     </nav>
-    <div id="background-fade">
+    <div id="background-fade" class="background-fade">
         <div id="item-box">
             <div id="items-data">
             </div>
@@ -50,6 +63,7 @@
         <div class="product-container" id="filter-products"></div>
     </div>
     <script src="navbar.js"></script>
+    <script src="cart.js"></script>
     <script src="jsonData.js"></script>
 </body>
 

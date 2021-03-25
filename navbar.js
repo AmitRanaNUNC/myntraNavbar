@@ -334,7 +334,9 @@ function productCart(img, name, desc, price,productId) {
     if(res.length !== 0){
         cartArray.map((data)=>{
             if(data.id == productId){
-                data.qty++;
+                // data.qty++;
+                document.getElementById('cart-msg').style.display = "block";
+                document.getElementById('cart-msg').innerHTML = 'Item already added!!!';  
             }
         });
     }else{
@@ -352,6 +354,7 @@ setInterval(() => {
         document.getElementById('cart-count').innerHTML = (cartArray.length);
     }
 }, 100)
+
 
 
 
