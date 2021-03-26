@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
+    <style>
+        body{
+            width:100%;
+            box-sizing: border-box;
+            font-family:Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+        }
+
+        .img-grid > img{
+            width: 100%;
+            height: 100%;
+        }
+
+        .prod-container{
+            display: flex;
+        }
+
+        .image-container{
+           display: grid;
+           grid-template-columns: auto auto; 
+           margin:20px;
+        }
+        
+        .img-grid{
+            margin:5px;
+        }
+
+        .prod-details{
+            margin:15px;
+            padding-right: 50px;
+        }
+
+        .prod-cartBtn, .prod-wishBtn{
+            cursor: pointer;
+            padding:20px 35px;
+            font-size:15px;
+            border-radius: 5px;
+            border:1px solid;
+            outline:none;
+            background-color:#ff3e6c;
+            color:white;
+            font-weight: 600;
+        }
+
+        .prod-wishBtn{
+            border:1px solid #d4d5d9;
+        }
+        
+        .prod-wishBtn:hover{
+            border-color:black;
+        }
+        
+        .prod-heading{
+            font-size:14px;
+            line-height: 0.5;
+            border-bottom: 1px solid #d4d5d9;
+        }
+
+        .prod-heading p{
+            font-size: 20px;
+            color:#535665;
+            opacity: 0.8;
+        }
+
+        .prod-desc{
+            line-height: 0.8;
+            font-size: 16px;
+            color:#282c3f;
+        }
+
+        .prod-subHeading{
+            font-weight: 600;
+        }
+
+        .spcl{
+            font-size: 18px;
+        }
+
+        .other-details{
+            width:80%;
+            padding-top: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="prod-container">
+        <div class="image-container">
+            <div class="img-grid">
+                <img src="imgs/HRX2.jpg" alt="">
+            </div>
+            <div class="img-grid">
+                <img src="imgs/HRX2.jpg" alt="">
+            </div>
+            <div class="img-grid">
+                <img src="imgs/HRX2.jpg" alt="">
+            </div>
+            <div class="img-grid">
+                <img src="imgs/HRX2.jpg" alt="">
+            </div>
+            <div class="img-grid">
+                <img src="imgs/HRX2.jpg" alt="">
+            </div>
+            <div class="img-grid">
+                <img src="imgs/HRX2.jpg" alt="">
+            </div>
+        </div>
+        <div class="prod-details">
+            <div class="prod-heading">
+                <h1>HRX by Hrithik Roshan</h1>
+                <p>Men Yellow Printed Round Neck T-Shirt</p>
+            </div>
+            <p style="font-size: 25px;font-weight: 500;">Rs.699</p>
+            <button class="prod-cartBtn"><i style="margin-right:15px" class="fas fa-shopping-cart"></i>ADD TO CART</button>
+            <button class="prod-wishBtn" style="background:white;color:black"><i class="far fa-heart" style="margin-right:15px;"></i>WISHLIST</button>
+            <div class="prod-desc" style="padding:15px 0">
+                <h3 class="prod-subHeading spcl">DELIVERY OPTIONS</h3>
+                <p>100% Original Products</p>
+                <p>Pay on delivery might be available</p>
+                <p>Easy 30 days returns and exchanges</p>
+                <p>Try & Buy might be available</p>
+            </div>
+            
+            <div class="offers" style="padding:5px 0;border-bottom: 1px solid #d4d5d9;">
+                <h3 class="prod-subHeading spcl">BEST OFFERS</h3>
+                <h4 class="prod-subHeading">Best Price:<span style="color:#ff905a">Rs.199</span></h4>
+                <ul style="line-height: 1.8;;">
+                    <li>Applicable on: Orders above Rs. 2999 (only on first purchase)</li>
+                    <li>Coupon code: MYNTRA500</li>
+                    <li>Coupon Discount: Rs. 500 off (check cart for final savings)</li>
+                </ul>
+                <h4 class="prod-subHeading">EMI option available</h4>
+                <ul>
+                    <li>EMI starting from Rs.33/month</li>
+                </ul>
+                <h4 class="prod-subHeading">Combo Offer: Get 2 items for Rs. 748</h4>
+                <ul style="margin-bottom: 25px;">
+                    <li>Buy 1 item for Rs. 699, buy 2 items for Rs. 748</li>
+                </ul>
+            </div>
+            
+            <div class="other-details">
+                <h3 class="prod-subHeading prod-det spcl">PRODUCT DETAILS </h3>
+                <p>Keep this hip this season with the HRX Men's Athleisure T-shirt. This versatile T-shirt can be styled any
+                    way you like for the ultimate gym-to-street look.</p>
+                <div class="prod-feature" style="line-height: 0.5;">
+                    <h4 class="prod-subHeading">Features</h4>
+                    <p>Athleisure T-shirt can be paired with tracks, khakis or jeans</p>
+                    <p>Style: Round Neck</p>
+                    <p>Sleeve: Short Sleeves</p>
+                    <p>Colour: Yellow</p>
+                    <p>Print: Typography</p>
+                    <p>Fit: Regulars</p>
+                </div>
+                <div style="line-height: 0.4;margin-top:40px">
+                    <h4 class="prod-subHeading">Size & Fit</h4>
+                    <p>The model height 6' is wearing a size M</p>
+                </div>
+                <div class="prod-material" style="line-height: 0.4;margin-top:40px">
+                    <h4 class="prod-subHeading">Material & Care</h4>
+                    <p>100% cotton</p>
+                    <p>Machine-wash</p>
+                </div>   
+            </div>         
+        </div>
+    </div>
+</body>
+
+</html>

@@ -3,9 +3,11 @@ const navItems = document.querySelectorAll('.nav-items');
     navItem.addEventListener("click", showClothes);
 });
 
-window.addEventListener('click', function (event) {
+window.addEventListener('click', (event) => {
     if (event.target.id == 'background-fade' || event.target.id == 'navbar')
         hideClothes();
+    if (event.target == modal)
+        modal.style.display = "none";
 });
 
 document.getElementById('closeButton').addEventListener('click', hideClothes);
@@ -270,12 +272,14 @@ function priceFilter(fetchedProduct, dummyArray, selectedFilter, productList, fi
 function fetchingProducts(product) {
     if (product.name != '') {
         return `<div id="${product.productId}" class="product-card">
-                <img src="${product.image}" alt="">
+                <a target="_blank" href="productDetails.html">
+                    <img src="${product.image[0]}" alt="">
+                </a>
                 <div id="product-details" class="product-details">
                     <h3 class="product-brand">${product.name}</h3>
                     <p class="product-desc">${product.description}</p>
                     <p class="product-price">${product.price}<span class="product-discount"> (${product.discount} OFF)</span></p>
-                    <button class="cart-button" onclick="productCart('${product.image}','${product.name}','${product.description}','${product.price}','${product.productId}')">ADD TO CART</button>
+                    <button class="cart-button" onclick="productCart('${product.image[0]}','${product.name}','${product.description}','${product.price}','${product.productId}')">ADD TO CART</button>
                 </div>
             </div>`;
     } else {
@@ -309,52 +313,170 @@ function priceSplit(filterArray) {
 let checkArray = JSON.parse(localStorage.getItem('cartItems'));
 let cartArray = checkArray != null ? checkArray : [];
 
-function productCart(img, name, desc, price,productId) {
+function productCart(img, name, desc, price, productId) {
 
     let productAdded = {
-        'id':productId,
+        'id': productId,
         'img': img,
         'name': name,
         'desc': desc,
         'price': price,
-        'qty':'1'
+        'qty': '1'
     };
-    
-    setInterval(() => {
+
+    setTimeout(() => {
         document.getElementById('cart-msg').style.display = "none";
     }, 1200);
     document.getElementById('cart-msg').style.display = "block";
-    document.getElementById('cart-msg').innerHTML = 'Added to the Cart!!!';    
-    
-    
-    let res = cartArray.filter((data)=>{
+    document.getElementById('cart-msg').innerHTML = 'Added to the Cart!!!';
+
+
+    let res = cartArray.filter((data) => {
         return data.id == productId
     });
 
-    if(res.length !== 0){
-        cartArray.map((data)=>{
-            if(data.id == productId){
+    if (res.length !== 0) {
+        cartArray.map((data) => {
+            if (data.id == productId) {
                 // data.qty++;
                 document.getElementById('cart-msg').style.display = "block";
-                document.getElementById('cart-msg').innerHTML = 'Item already added!!!';  
+                document.getElementById('cart-msg').innerHTML = 'Item already added!!!';
             }
         });
-    }else{
+    } else {
         cartArray.push(productAdded);
     }
-    
+    cartCount();
     localStorage.setItem('cartItems', JSON.stringify(cartArray));
 }
 
-setInterval(() => {
+function cartCount() {
     if (cartArray.length == 0)
         document.getElementById('cart-count').style.display = "none";
     else {
         document.getElementById('cart-count').style.display = "block";
         document.getElementById('cart-count').innerHTML = (cartArray.length);
     }
-}, 100)
+}
+cartCount();
+let cartItems = JSON.parse(localStorage.getItem('cartItems'));
 
+function displayCart() {
+    cartCount();
+    cartItems = JSON.parse(localStorage.getItem('cartItems'));
+    if (cartItems.length == 0){
+        document.getElementById('cart-total').style.display = 'none';
+        document.getElementById('empty-cart').style.display = 'block';
+        document.getElementById('empty-cart').innerText = "No Items in the cart,please add some items!!!";
+    }
+    else{
+        document.getElementById('empty-cart').style.display = 'none';
+        document.getElementById('cart-total').style.display = 'block';
+    }
+
+    let finalCart = '';
+    cartItems.map((cart, cartIndex) => {
+        finalCart += `<div class="cart-card">
+                <img class="cart-img" alt="" src="${cart.img}">
+                <div id="cart-product-details" class="cart-product-details">
+                    <h3 class="cart-product-brand">${cart.name}</h3>
+                    <p class="cart-product-desc">${cart.desc}</p>
+                    <select name="" id="" onchange="quantity(this.value,'${cart.price}','cart-${cart.id}')" style="outline:none;border-radius:2px;background:#f5f5f6;border:none;text-align:Center;color:black;">
+                        <option value="1" ${cart.qty == 1 ? 'selected' : ''}>Qty:1</option>
+                        <option value="2" ${cart.qty == 2 ? 'selected' : ''}>Qty:2</option>
+                        <option value="3" ${cart.qty == 3 ? 'selected' : ''}>Qty:3</option>
+                        <option value="4" ${cart.qty == 4 ? 'selected' : ''}>Qty:4</option>
+                        <option value="5" ${cart.qty == 5 ? 'selected' : ''}>Qty:5</option>
+                    </select>
+
+                    <div style="margin-top:55px;">
+                        <span id="remove-${cartIndex}" class="removeItem" onclick=removeItem(this.id)>REMOVE</span>
+                    </div>
+                    </div>
+                <div class="cart-product-price">
+                    <p id="cart-${cart.id}">${cart.price}</p>
+                </div>
+            </div>`;
+        displayPrice(cart.price);
+    });
+    document.getElementById('cart-products').innerHTML = finalCart;
+}
+
+function displayPrice(totalPrice) {
+    cartItems = JSON.parse(localStorage.getItem('cartItems'));
+    let priceFilter = totalPrice.slice(3);
+    totalPrice = parseInt(priceFilter);
+    let totalMrp = 0;
+
+    cartItems.map((data) => {
+        let price = parseInt((data.price).slice(3));
+        totalMrp += price;
+    })
+
+    let shippingCharges = 50;
+    let cartPrice = '';
+    cartPrice += `<div class="cart-total">
+        <div class="cart-details">
+            PRICE DETAILS
+        </div>
+        <div class="price-total">
+            <span>Total MRP</span>
+            <span style="float: right;">Rs.${totalMrp}</span>
+        </div>
+        <div class="price-total">
+            <span>Shipping Charges</span>
+            <span style="float: right;">Rs.${shippingCharges}</span>
+        </div>
+        <hr>
+        <div class="price-total">
+            <b>
+                <span>Total Amount</span>
+                <span id="totalPrice" style="float: right;">Rs.${totalMrp + shippingCharges}</span>
+            </b>
+        </div>
+        <button style="width: 100%;padding:10px;margin-top:10px;background-color: #ff3f6c;color:white;border:none;font-size:14px;">CHECKOUT</button>
+    </div>`;
+    document.getElementById('cart-total').innerHTML = cartPrice;
+}
+
+function quantity(qty, price, id) {
+    cartItems = JSON.parse(localStorage.getItem('cartItems'));
+    let productPrice = parseInt(price.slice(3));
+    let dataId = id.slice(5);
+    let finalPrice = productPrice * qty;
+    document.getElementById(id).innerHTML = `Rs.${finalPrice}`;
+    cartItems.map((data) => {
+        if (data.id === dataId) {
+            data.price = document.getElementById(id).innerText;
+            data.qty = qty;
+        }
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    });
+    setTimeout(() => {
+        displayPrice(document.getElementById(id).innerText);
+    }, 100)
+}
+
+function removeItem(id) {
+    cartItems = JSON.parse(localStorage.getItem('cartItems'));
+    cartItems.splice(id, 1);
+    cartArray.splice(id, 1);
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    displayCart();
+}
+
+let modal = document.getElementById('modal');
+let cartBtn = document.getElementById('cartBtn');
+let closeBtn = document.getElementById('closeBtn');
+
+cartBtn.addEventListener('click', () => {
+    modal.style.display = 'block';
+    displayCart();
+});
+
+closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
 
 
 
