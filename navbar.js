@@ -364,12 +364,12 @@ let cartItems = JSON.parse(localStorage.getItem('cartItems'));
 function displayCart() {
     cartCount();
     cartItems = JSON.parse(localStorage.getItem('cartItems'));
-    if (cartItems.length == 0){
+    if (cartItems.length == 0) {
         document.getElementById('cart-total').style.display = 'none';
         document.getElementById('empty-cart').style.display = 'block';
         document.getElementById('empty-cart').innerText = "No Items in the cart,please add some items!!!";
     }
-    else{
+    else {
         document.getElementById('empty-cart').style.display = 'none';
         document.getElementById('cart-total').style.display = 'block';
     }
