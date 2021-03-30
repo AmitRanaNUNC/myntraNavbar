@@ -249,7 +249,7 @@ let productsList = {
                 "name": "HRX by Hrithik Roshan",
                 "description": "Rapid Dry T-Shirt",
                 "price": "Rs.499",
-                "image": ["imgs/HRX.jpg","imgs/HRX2.jpg"],
+                "image": ["imgs/HRX1.jpg","imgs/HRX2.jpg","imgs/HRX3.jpg","imgs/HRX4.jpg","imgs/HRX5.jpg","imgs/HRX6.jpg","imgs/HRX5.jpg","imgs/HRX6.jpg"],
                 "color":"Blue",
                 "discount":"10%"
             },
@@ -258,7 +258,7 @@ let productsList = {
                 "name": "WROGN",
                 "description": "Men Solid Slim Fit T-Shirt",
                 "price": "Rs.5119",
-                "image": ["https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/10188591/2019/9/26/70f45aeb-477e-48fb-b5e4-8820904196271569490421369-WROGN-Men-Burgundy-Solid-Slim-Fit-Round-Neck-T-shirt-9361569-1.jpg"],
+                "image": ["imgs/wrongn1.jpg","imgs/wrongn2.jpg","imgs/wrongn3.jpg","imgs/wrongn4.jpg","imgs/wrongn5.jpg","imgs/wrongn6.jpg",],
                 "color":"Grey",
                 "discount":"20%"
             },
@@ -267,7 +267,7 @@ let productsList = {
                 "name": "Campus Sutra",
                 "description": "Colourblocked Rounded",
                 "price": "Rs.1427",
-                "image": ["https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/10016983/2019/6/20/b5caaca7-b5e8-4134-9283-65473a2388031561026348090-Campus-Sutra-Men-Blue-Colourblocked-Round-Neck-T-shirt-99915-1.jpg"],
+                "image": ["imgs/campus1.jpg"],
                 "color":"Blue",
                 "discount":"20%"
             },
@@ -276,7 +276,7 @@ let productsList = {
                 "name": "Roaster",
                 "description": "Printed Round Neck T-Shirt",
                 "price": "Rs.9384",
-                "image": ["https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/1700944/2019/6/8/972c9498-3a37-4d5d-976c-4493b4d5c0021559989322793-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Round-Neck-T-Shirt--1.jpg"],
+                "image": ["imgs/roaster1.jpg"],
                 "color":"Blue",
                 "discount":"30%"
             },
@@ -285,7 +285,7 @@ let productsList = {
                 "name": "Roaster",
                 "description": "Rapid Dry T-Shirt",
                 "price": "Rs.999",
-                "image": ["https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/5842076/2018/12/20/353cd269-5498-4aa9-a6ca-c503fcd2f2c61545286560719-HRX-by-Hrithik-Roshan-Men-White-Rapid-Dry-Camo-Training-T-sh-1.jpg"],
+                "image": ["imgs/roaster1.jpg"],
                 "color":"Blue",
                 "discount":"10%"
             },
@@ -294,7 +294,7 @@ let productsList = {
                 "name": "Puma",
                 "description": "Colourblocked Rounded",
                 "price": "Rs.4127",
-                "image": ["https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/10016983/2019/6/20/b5caaca7-b5e8-4134-9283-65473a2388031561026348090-Campus-Sutra-Men-Blue-Colourblocked-Round-Neck-T-shirt-99915-1.jpg"],
+                "image": ["imgs/puma1.jpg"],
                 "color":"Black",
                 "discount":"40%"
             },
@@ -303,9 +303,25 @@ let productsList = {
                 "name": "HRX by Hrithik Roshan",
                 "description": "Printed Round Neck T-Shirt",
                 "price": "Rs.13384",
-                "image": ["https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/1700944/2019/6/8/972c9498-3a37-4d5d-976c-4493b4d5c0021559989322793-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Round-Neck-T-Shirt--1.jpg"],
+                "image": ["imgs/HRX1.jpg"],
                 "color":"Grey",
                 "discount":"20%"
+            },
+            {   "productId":"8",
+                "name": "HRX",
+                "description": "Rapid Dry T-Shirt",
+                "price": "Rs.399",
+                "image": ["imgs/HRX4.jpg","imgs/HRX2.jpg","imgs/HRX3.jpg","imgs/HRX1.jpg","imgs/HRX5.jpg","imgs/HRX6.jpg","imgs/HRX5.jpg","imgs/HRX6.jpg"],
+                "color":"Blue",
+                "discount":"10%"
+            },
+            {   "productId":"9",
+                "name": "HRX by Hrithik Roshan",
+                "description": "Rapid Dry T-Shirt",
+                "price": "Rs.1499",
+                "image": ["imgs/HRX3.jpg","imgs/HRX2.jpg","imgs/HRX1.jpg","imgs/HRX4.jpg","imgs/HRX5.jpg","imgs/HRX6.jpg","imgs/HRX5.jpg","imgs/HRX6.jpg"],
+                "color":"Blue",
+                "discount":"10%"
             },
         ],
     "Causal Shirts":

@@ -1,24 +1,29 @@
 
 #goToPrevSlide{
     position: absolute;
-    bottom:70%;
-    left:-1%;
-    transform: translate(1%,70%);
+    bottom:65%;
+    left:0.1%;
+    transform: translate(0.1%,65%);
     font-size: 30px;
     cursor: pointer;
 }
 
 #goToNextSlide{
     position: absolute;
-    bottom:70%;
-    right:-1%;
-    transform: translate(1%,70%);
+    bottom:65%;
+    right:0.1%;
+    transform: translate(0.1%,65%);
     font-size: 30px;
     cursor: pointer;
 }
 
 .related-product{
-    width: 21.5rem;
+    width: 20.5rem;
+    padding:0 14px;
+}
+
+#product-wrapper{
+    margin:0  15px;
 }
 
 @media (max-width:600px){
@@ -26,35 +31,41 @@
         width: 25rem;
         padding:10px;
     }
+
+    #goToPrevSlide{
+        position: absolute;
+        bottom:60%;
+        left:-1%;
+        transform: translate(-1%,60%);
+    }
+    
+    #goToNextSlide{
+        position: absolute;
+        bottom:60%;
+        right:-4%;
+        transform: translate(-1%,60%);
+    }
 }
 
 @media (min-width:600px) and (max-width:760px){
 
     .related-product{
-        width: 16rem;
+        width: 20rem;
         height: 100%;
     }
 
     #goToPrevSlide{
         position: absolute;
-        bottom:82%;
-        left:-3%;
-        transform: translate(3%,82%);
-        font-size: 30px;
-        cursor: pointer;
+        bottom:60%;
+        left:-1%;
+        transform: translate(-1%,60%);
     }
     
     #goToNextSlide{
         position: absolute;
-        bottom:82%;
-        right:-3%;
-        transform: translate(-3%,82%);
-        font-size: 30px;
-        cursor: pointer;
-    }
-
-    #product-wrapper{
-        transform: translate(-1.5%,-125%);
+        bottom:60%;
+        right:-1%;
+        transform: translate(-1%,60%);
     }
 }
 

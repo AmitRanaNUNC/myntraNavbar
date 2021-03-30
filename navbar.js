@@ -62,7 +62,9 @@ let section = (sectionValue, uniqueValue) => {
                         <div id=${uniqueValue} class='dropdown-content'>`;
 
             [...clothesValue].map(value => {
-                htmz += `<li style='margin-left:15px;'><a data-value="${value}" onclick="productPage('${value}')" href='#'>${value}</a></li>`;
+                let url = window.location.href;
+                let prodDetails = url.split('?');
+                htmz += `<li style='margin-left:15px;'><a data-value="${value}" onclick="productPage('${value}')" href=${(prodDetails.length == 2) ? 'index.html' : '#'}>${value}</a></li>`;
             });
             uniqueValue++;
             htmz += `</div>`;
@@ -179,7 +181,7 @@ function productPage(val, filterActive = '') {
         fetchFilter += `</div>`;
     }
     productList.map((product) => {
-        finalProduct += fetchingProducts(product);
+        finalProduct += fetchingProducts(product, val);
     })
     document.getElementById('product-filters').innerHTML = fetchFilter;
     document.getElementById('product-container').innerHTML = finalProduct;
@@ -269,11 +271,11 @@ function priceFilter(fetchedProduct, dummyArray, selectedFilter, productList, fi
     return fetchedProduct;
 }
 
-function fetchingProducts(product) {
+function fetchingProducts(product, val="") {
     if (product.name != '') {
         return `<div id="${product.productId}" class="product-card">
-                <a target="_blank" href="productDetails.html">
-                    <img src="${product.image[0]}" alt="">
+                <a target="_blank" href="productDetails.html?cat=${val}&prodId=${product.productId}&brand=${product.name}&desc=${product.description}">
+                    <img style="max-width:100%;max-height:100%;" src="${product.image[0]}" alt="">
                 </a>
                 <div id="product-details" class="product-details">
                     <h3 class="product-brand">${product.name}</h3>
@@ -477,6 +479,4 @@ cartBtn.addEventListener('click', () => {
 closeBtn.addEventListener('click', () => {
     modal.style.display = 'none';
 });
-
-
 
