@@ -10,7 +10,15 @@ window.addEventListener('click', (event) => {
         modal.style.display = "none";
 });
 
-document.getElementById('closeButton').addEventListener('click', hideClothes);
+let closeButton = document.getElementById('closeButton');
+let itemsData = document.getElementById("items-data");
+let itemBox = document.getElementById("item-box");
+let backgroundFade = document.getElementById("background-fade");
+let productContainer = document.getElementById('product-container');
+let cartMsg = document.getElementById('cart-msg');
+let cartCounting = document.getElementById('cart-count');
+
+closeButton.addEventListener('click', hideClothes);
 
 function parsingItems(itemName) {
     let uniqueValue = 1;
@@ -42,9 +50,9 @@ function parsingItems(itemName) {
                             </ul>`;
                 }
             });
-            document.getElementById("items-data").innerHTML = htmz;
+            itemsData.innerHTML = htmz;
         } else
-            document.getElementById("items-data").innerHTML = "<div style='text-align:center;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:green;opacity:0.7;'>We Don't have any offers right now for you!!!</div>";
+            itemsData.innerHTML = "<div style='text-align:center;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:green;opacity:0.7;'>We Don't have any offers right now for you!!!</div>";
     }
 }
 
@@ -64,7 +72,7 @@ let section = (sectionValue, uniqueValue) => {
             [...clothesValue].map(value => {
                 let url = window.location.href;
                 let prodDetails = url.split('?');
-                htmz += `<li style='margin-left:15px;'><a data-value="${value}" onclick="productPage('${value}')" href=${(prodDetails.length == 2) ? 'index.html' : '#'}>${value}</a></li>`;
+                htmz += `<li style='margin-left:15px;'><a data-value="${value}" onclick="productPage('${value}')" href='#'}>${value}</a></li>`;
             });
             uniqueValue++;
             htmz += `</div>`;
@@ -75,7 +83,7 @@ let section = (sectionValue, uniqueValue) => {
                     </ul>`;
     });
     uniqueValue++;
-    document.getElementById("items-data").innerHTML = htmz;
+    itemsData.innerHTML = htmz;
 }
 
 const sectionArray = ['men', 'women', 'kids', 'homeandliving', 'offers'];
@@ -94,16 +102,16 @@ function showClothes(event) {
     parsingItems(event.target.dataset.value);
 
     toggleActive(event.target.dataset.value, this);
-    document.getElementById("item-box").style.cssText = show;
-    document.getElementById("background-fade").style.visibility = 'visible';
-    document.getElementById('closeButton').style.visibility = 'visible';
+    itemBox.style.cssText = show;
+    backgroundFade.style.visibility = 'visible';
+    closeButton.style.visibility = 'visible';
 }
 
 function hideClothes() {
     let hide = 'visibility:hidden;opacity:0;transition: all .5s ease-out;';
-    document.getElementById("item-box").style.cssText = hide;
-    document.getElementById("background-fade").style.visibility = 'hidden';
-    document.getElementById('closeButton').style.visibility = 'hidden';
+    itemBox.style.cssText = hide;
+    backgroundFade.style.visibility = 'hidden';
+    closeButton.style.visibility = 'hidden';
 
     /*hiding if any active class is there*/
     sectionArray.map((ele) => {
@@ -164,6 +172,7 @@ function showSuggestions(list) {
 }
 
 function productPage(val, filterActive = '') {
+    console.log(val);
     hideClothes();
     let productList = productsList[val];
     let finalProduct = '';
@@ -184,7 +193,7 @@ function productPage(val, filterActive = '') {
         finalProduct += fetchingProducts(product, val);
     })
     document.getElementById('product-filters').innerHTML = fetchFilter;
-    document.getElementById('product-container').innerHTML = finalProduct;
+    productContainer.innerHTML = finalProduct;
     document.body.style.backgroundImage = 'none';
 }
 
@@ -218,7 +227,7 @@ function filterData(value, selectedSection, filterSection) {
     });
 
     if (fetchedProduct.length != 0)
-        document.getElementById('product-container').innerHTML = finalProduct;
+    productContainer.innerHTML = finalProduct;
     else
         productPage(selectedSection);
 }
@@ -327,10 +336,10 @@ function productCart(img, name, desc, price, productId) {
     };
 
     setTimeout(() => {
-        document.getElementById('cart-msg').style.display = "none";
+        cartMsg.style.display = "none";
     }, 1200);
-    document.getElementById('cart-msg').style.display = "block";
-    document.getElementById('cart-msg').innerHTML = 'Added to the Cart!!!';
+    cartMsg.style.display = "block";
+    cartMsg.innerHTML = 'Added to the Cart!!!';
 
 
     let res = cartArray.filter((data) => {
@@ -341,8 +350,8 @@ function productCart(img, name, desc, price, productId) {
         cartArray.map((data) => {
             if (data.id == productId) {
                 // data.qty++;
-                document.getElementById('cart-msg').style.display = "block";
-                document.getElementById('cart-msg').innerHTML = 'Item already added!!!';
+                cartMsg.style.display = "block";
+                cartMsg.innerHTML = 'Item already added!!!';
             }
         });
     } else {
@@ -354,26 +363,27 @@ function productCart(img, name, desc, price, productId) {
 
 function cartCount() {
     if (cartArray.length == 0)
-        document.getElementById('cart-count').style.display = "none";
+        cartCounting.style.display = "none";
     else {
-        document.getElementById('cart-count').style.display = "block";
-        document.getElementById('cart-count').innerHTML = (cartArray.length);
+        cartCounting.style.display = "block";
+        cartCounting.innerHTML = (cartArray.length);
     }
 }
 cartCount();
 let cartItems = JSON.parse(localStorage.getItem('cartItems'));
-
+let cartTotal = document.getElementById('cart-total');
+let emptyCart = document.getElementById('empty-cart');
 function displayCart() {
     cartCount();
     cartItems = JSON.parse(localStorage.getItem('cartItems'));
     if (cartItems.length == 0) {
-        document.getElementById('cart-total').style.display = 'none';
-        document.getElementById('empty-cart').style.display = 'block';
-        document.getElementById('empty-cart').innerText = "No Items in the cart,please add some items!!!";
+        cartTotal.style.display = 'none';
+        emptyCart.style.display = 'block';
+        emptyCart.innerText = "No Items in the cart,please add some items!!!";
     }
     else {
-        document.getElementById('empty-cart').style.display = 'none';
-        document.getElementById('cart-total').style.display = 'block';
+        emptyCart.style.display = 'none';
+        cartTotal.style.display = 'block';
     }
 
     let finalCart = '';
@@ -438,7 +448,7 @@ function displayPrice(totalPrice) {
         </div>
         <button style="width: 100%;padding:10px;margin-top:10px;background-color: #ff3f6c;color:white;border:none;font-size:14px;">CHECKOUT</button>
     </div>`;
-    document.getElementById('cart-total').innerHTML = cartPrice;
+    cartTotal.innerHTML = cartPrice;
 }
 
 function quantity(qty, price, id) {
