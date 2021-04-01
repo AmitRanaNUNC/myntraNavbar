@@ -249,7 +249,7 @@ let productsList = {
                 "name": "HRX by Hrithik Roshan",
                 "description": "Rapid Dry T-Shirt",
                 "price": "Rs.499",
-                "image": ["imgs/HRX1.jpg","imgs/HRX2.jpg","imgs/HRX3.jpg","imgs/HRX4.jpg","imgs/HRX5.jpg","imgs/HRX6.jpg","imgs/HRX5.jpg","imgs/HRX6.jpg"],
+                "image": ["imgs/HRX1.jpg","imgs/HRX2.jpg","imgs/HRX3.jpg","imgs/HRX4.jpg","imgs/HRX5.jpg","imgs/HRX6.jpg"],
                 "color":"Blue",
                 "discount":"10%"
             },
@@ -311,7 +311,7 @@ let productsList = {
                 "name": "HRX",
                 "description": "Rapid Dry T-Shirt",
                 "price": "Rs.399",
-                "image": ["imgs/HRX4.jpg","imgs/HRX2.jpg","imgs/HRX3.jpg","imgs/HRX1.jpg","imgs/HRX5.jpg","imgs/HRX6.jpg","imgs/HRX5.jpg","imgs/HRX6.jpg"],
+                "image": ["imgs/HRX2.jpg","imgs/HRX4.jpg","imgs/HRX3.jpg","imgs/HRX1.jpg","imgs/HRX5.jpg","imgs/HRX6.jpg","imgs/HRX5.jpg","imgs/HRX6.jpg"],
                 "color":"Blue",
                 "discount":"10%"
             },
@@ -319,7 +319,7 @@ let productsList = {
                 "name": "HRX by Hrithik Roshan",
                 "description": "Rapid Dry T-Shirt",
                 "price": "Rs.1499",
-                "image": ["imgs/HRX3.jpg","imgs/HRX2.jpg","imgs/HRX1.jpg","imgs/HRX4.jpg","imgs/HRX5.jpg","imgs/HRX6.jpg","imgs/HRX5.jpg","imgs/HRX6.jpg"],
+                "image": ["imgs/HRX1.jpg","imgs/HRX2.jpg","imgs/HRX3.jpg","imgs/HRX4.jpg","imgs/HRX5.jpg","imgs/HRX6.jpg","imgs/HRX5.jpg","imgs/HRX6.jpg"],
                 "color":"Blue",
                 "discount":"10%"
             },

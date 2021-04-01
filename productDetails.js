@@ -67,11 +67,19 @@ function fetchedProducts(id, cat, brandName, desc) {
                 document.getElementById('cart-btn').innerHTML = btn;
             }
             let prodImg = '';
-            prod.image.forEach(element => {
-                prodImg += `<div class="img-grid">
-                <img src="${element}" alt="">
-                </div>`;
-            });
+            prodImg += `<div id="main-image">
+                <img id="big-image" onmouseout="bigImage()" onmouseover="largeImage()" src="${prod.image[0]}" alt="">
+            </div>
+            <div id="thumbnail-images">
+                <ul class="thumbnail-list">
+                    <li><img class="thumImg" onclick="changeImg('${prod.image[0]}')" src="${prod.image[0]}" alt=""></li>
+                    <li><img class="thumImg" onclick="changeImg('${prod.image[1]}')" src="${prod.image[1]}" alt=""></li>
+                    <li><img class="thumImg" onclick="changeImg('${prod.image[2]}')" src="${prod.image[2]}" alt=""></li>
+                    <li><img class="thumImg" onclick="changeImg('${prod.image[3]}')" src="${prod.image[3]}" alt=""></li>
+                    <li><img class="thumImg" onclick="changeImg('${prod.image[4]}')" src="${prod.image[4]}" alt=""></li>
+                    <li><img class="thumImg" onclick="changeImg('${prod.image[5]}')" src="${prod.image[5]}" alt=""></li>
+                </ul>
+            </div>`;
             document.getElementById('prod-img').innerHTML = prodImg;
         }
 
@@ -102,6 +110,130 @@ function loadProduct() {
     let desc = prod[3].split('=')[1];
 
     fetchedProducts(id, cat, brandName, desc);
+}
+
+function changeImg(img) {
+    let mainImg = document.getElementById('main-image');
+    mainImg.innerHTML = `<img id="big-image" onmouseout="bigImage()" onmouseover="largeImage()" src="${img}" alt=""></img>`;
+}
+
+function bigImage() {
+    document.getElementsByClassName('img-zoom-result ')[0].style.display = 'none';
+}
+
+function largeImage() {
+    document.getElementsByClassName('img-zoom-result ')[0].style.display = 'block';
+    imageZoom("big-image", "myresult");
+}
+
+function imageZoom(imgID, resultID) {
+    let img, lens, result, cx, cy;
+    img = document.getElementById(imgID);
+    result = document.getElementById(resultID);
+    lens = document.createElement("DIV");
+    lens.setAttribute("class", "img-zoom-lens");
+    img.parentElement.insertBefore(lens, img);
+    cx = result.offsetWidth / lens.offsetWidth;
+    cy = result.offsetHeight / lens.offsetHeight;
+    result.style.backgroundImage = "url('" + img.src + "')";
+    result.style.backgroundSize = (img.width * cx) + "px " + (img.height * cy) + "px";
+
+    lens.addEventListener("mousemove", moveLens);
+    img.addEventListener("mousemove", moveLens);
+    lens.addEventListener("touchmove", moveLens);
+    img.addEventListener("touchmove", moveLens);
+
+    function moveLens(e) {
+        let pos, x, y;
+        e.preventDefault();
+        pos = getCursorPos(e);
+        x = pos.x - (lens.offsetWidth / 2);
+        y = pos.y - (lens.offsetHeight / 2);
+        if (x > img.width - lens.offsetWidth) { x = img.width - lens.offsetWidth; }
+        if (x < 0) { x = 0; }
+        if (y > img.height - lens.offsetHeight) { y = img.height - lens.offsetHeight; }
+        if (y < 0) { y = 0; }
+        lens.style.left = x + "px";
+        lens.style.top = y + "px";
+        result.style.backgroundPosition = "-" + (x * cx) + "px -" + (y * cy) + "px";
+    }
+
+
+    function getCursorPos(e) {
+        let a, x = 0, y = 0;
+        e = e || window.event;
+        a = img.getBoundingClientRect();
+        x = e.pageX - a.left;
+        y = e.pageY - a.top;
+        x = x - window.pageXOffset;
+        y = y - window.pageYOffset;
+        return { x: x, y: y };
+    }
+}
+
+const debounce = (func, delay) => {
+    let debounceTimer
+    return function () {
+        const context = this
+        const args = arguments
+        clearTimeout(debounceTimer)
+        debounceTimer
+            = setTimeout(() => func.apply(context, args), delay)
+    }
+}
+
+window.addEventListener('resize', debounce(reportWindowSize, 100));
+
+function reportWindowSize() {
+    // console.log(this.innerWidth);
+    if (this.innerWidth <= 320) {
+        document.getElementById('slideshow-container').style.display = 'block';
+        document.getElementById('product-img').style.display = 'none';
+
+    } else if (this.innerWidth <= 576) {
+        document.getElementById('slideshow-container').style.display = 'block';
+        document.getElementById('product-img').style.display = 'none';
+
+    } else if (this.innerWidth <= 768) {
+        document.getElementById('slideshow-container').style.display = 'block';
+        document.getElementById('product-img').style.display = 'none';
+
+    } else if (this.innerWidth <= 992) {
+        document.getElementById('slideshow-container').style.display = 'block';
+        document.getElementById('product-img').style.display = 'none';
+
+    } else if (this.innerWidth > 1200) {
+        document.getElementById('slideshow-container').style.display = 'none';
+        document.getElementById('product-img').style.display = 'block';
+    }
+}
+
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
 }
 
 loadProduct();
