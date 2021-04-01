@@ -72,7 +72,7 @@ let section = (sectionValue, uniqueValue) => {
             [...clothesValue].map(value => {
                 let url = window.location.href;
                 let prodDetails = url.split('?');
-                htmz += `<li style='margin-left:15px;'><a data-value="${value}" onclick="productPage('${value}')" href='#'}>${value}</a></li>`;
+                htmz += `<li style='margin-left:15px;'><a data-value="${value}" onclick="productPage('${value}')" href=${(prodDetails.length == 2) ? 'index.html' : '#'}>${value}</a></li>`;
             });
             uniqueValue++;
             htmz += `</div>`;

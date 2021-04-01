@@ -1,57 +1,57 @@
 $(document).ready(function () {
     $(window).resize(() => {
-      if ($(this).width() <= 320) {
-        images = 1;
-      } else if ($(this).width() <= 576) {
-        images = 2;
-      } else if ($(this).width() <= 768) {
-        images = 3;
-      } else if ($(this).width() <= 992) {
-        images = 3;
-      } else if ($(this).width() > 992) {
-        images = 4;
-      }
-      localStorage.setItem("itemsPerClick", images);
+        if ($(this).width() <= 320) {
+            images = 1;
+        } else if ($(this).width() <= 576) {
+            images = 2;
+        } else if ($(this).width() <= 768) {
+            images = 3;
+        } else if ($(this).width() <= 992) {
+            images = 3;
+        } else if ($(this).width() > 992) {
+            images = 4;
+        }
+        localStorage.setItem("itemsPerClick", images);
     });
-    
+
     let totalImages = $(".item").length;
     let posterContainer = $(".poster-container")[0];
     let availScrollWidth = posterContainer.scrollWidth;
     let count = 1;
-  
+
     $("#goToPrevSlide").click(() => {
-      let itemsPerClick = localStorage.getItem("itemsPerClick");
-      itemsPerClick = itemsPerClick ? itemsPerClick : 4;
-      let scrollcount = Math.ceil(totalImages / itemsPerClick);
-      if (count === 1) {
-        posterContainer.scrollLeft += availScrollWidth;
-        count = scrollcount;
-      } else {
-        posterContainer.scrollLeft -= posterContainer.clientWidth;
-        count--;
-      }
+        let itemsPerClick = localStorage.getItem("itemsPerClick");
+        itemsPerClick = itemsPerClick ? itemsPerClick : 4;
+        let scrollcount = Math.ceil(totalImages / itemsPerClick);
+        if (count === 1) {
+            posterContainer.scrollLeft += availScrollWidth;
+            count = scrollcount;
+        } else {
+            posterContainer.scrollLeft -= posterContainer.clientWidth;
+            count--;
+        }
     });
-  
+
     $("#goToNextSlide").click(() => {
-      let itemsPerClick = localStorage.getItem("itemsPerClick");
-      itemsPerClick = itemsPerClick ? itemsPerClick : 4;
-      let scrollcount = Math.ceil(totalImages / itemsPerClick);
-      if (count >= scrollcount) {
-        posterContainer.scrollLeft = 0;
-        count = 1;
-      } else {
-        posterContainer.scrollLeft += posterContainer.clientWidth;
-        count++;
-      }
+        let itemsPerClick = localStorage.getItem("itemsPerClick");
+        itemsPerClick = itemsPerClick ? itemsPerClick : 4;
+        let scrollcount = Math.ceil(totalImages / itemsPerClick);
+        if (count >= scrollcount) {
+            posterContainer.scrollLeft = 0;
+            count = 1;
+        } else {
+            posterContainer.scrollLeft += posterContainer.clientWidth;
+            count++;
+        }
     });
-  });
-  
+});
+
 
 let similarProdContainer = document.getElementById('product-wrapper');
 let scrollWidth = similarProdContainer.scrollWidth;
 let relatedItems = '';
 
-function fetchedProducts(id,cat, brandName, desc) {
+function fetchedProducts(id, cat, brandName, desc) {
     let product = productsList[cat];
 
     product.map((prod) => {
@@ -101,7 +101,7 @@ function loadProduct() {
     let brandName = prod[2].split('=')[1];
     let desc = prod[3].split('=')[1];
 
-    fetchedProducts(id,cat, brandName, desc);
+    fetchedProducts(id, cat, brandName, desc);
 }
 
 loadProduct();
