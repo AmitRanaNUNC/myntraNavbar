@@ -53,7 +53,6 @@ let relatedItems = '';
 
 function fetchedProducts(id, cat, brandName, desc) {
     let product = productsList[cat];
-
     product.map((prod) => {
         if (prod.name == brandName && prod.description == desc) {
             if (prod.productId == id) {
@@ -67,6 +66,7 @@ function fetchedProducts(id, cat, brandName, desc) {
                 document.getElementById('cart-btn').innerHTML = btn;
             }
             let prodImg = '';
+            let sliderImg = '';
             prodImg += `<div id="main-image">
                 <img id="big-image" onmouseout="bigImage()" onmouseover="largeImage()" src="${prod.image[0]}" alt="">
             </div>
@@ -81,6 +81,14 @@ function fetchedProducts(id, cat, brandName, desc) {
                 </ul>
             </div>`;
             document.getElementById('prod-img').innerHTML = prodImg;
+            prod.image.map((data)=>{
+                sliderImg += `<div class="mySlides fade">
+                    <img src="${data}" style="width:100%">
+                    </div>`;
+            });
+            sliderImg += `<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>`;
+            document.getElementById('slide-img').innerHTML = sliderImg;   
         }
 
         if (prod.name == brandName || prod.description == desc) {
@@ -118,11 +126,11 @@ function changeImg(img) {
 }
 
 function bigImage() {
-    document.getElementsByClassName('img-zoom-result ')[0].style.display = 'none';
+    document.getElementsByClassName('img-zoom-result')[0].style.display = 'none';
 }
 
 function largeImage() {
-    document.getElementsByClassName('img-zoom-result ')[0].style.display = 'block';
+    document.getElementsByClassName('img-zoom-result')[0].style.display = 'block';
     imageZoom("big-image", "myresult");
 }
 
@@ -171,69 +179,57 @@ function imageZoom(imgID, resultID) {
     }
 }
 
+loadProduct();
+
+// Slider JS
+
 const debounce = (func, delay) => {
-    let debounceTimer
-    return function () {
+    let debounceTimer;
+    return function() {
         const context = this
         const args = arguments
-        clearTimeout(debounceTimer)
-        debounceTimer
+            clearTimeout(debounceTimer)
+                debounceTimer
             = setTimeout(() => func.apply(context, args), delay)
     }
 }
 
 window.addEventListener('resize', debounce(reportWindowSize, 100));
+document.getElementById('img-slider').style.display = 'none';
 
-function reportWindowSize() {
-    // console.log(this.innerWidth);
-    if (this.innerWidth <= 320) {
-        document.getElementById('slideshow-container').style.display = 'block';
-        document.getElementById('product-img').style.display = 'none';
-
-    } else if (this.innerWidth <= 576) {
-        document.getElementById('slideshow-container').style.display = 'block';
-        document.getElementById('product-img').style.display = 'none';
-
-    } else if (this.innerWidth <= 768) {
-        document.getElementById('slideshow-container').style.display = 'block';
-        document.getElementById('product-img').style.display = 'none';
-
-    } else if (this.innerWidth <= 992) {
-        document.getElementById('slideshow-container').style.display = 'block';
-        document.getElementById('product-img').style.display = 'none';
-
-    } else if (this.innerWidth > 1200) {
-        document.getElementById('slideshow-container').style.display = 'none';
-        document.getElementById('product-img').style.display = 'block';
+function reportWindowSize(){
+    if (this.innerWidth <= 1200) {
+        document.getElementById('img-slider').style.display = 'block';
+        document.getElementById('prod-img').style.display = 'none';
+    }else{
+        document.getElementById('img-slider').style.display = 'none';
+        document.getElementById('prod-img').style.display = 'block';
     }
 }
-
 
 let slideIndex = 1;
 showSlides(slideIndex);
 
 function plusSlides(n) {
-    showSlides(slideIndex += n);
+  showSlides(slideIndex += n);
 }
 
 function currentSlide(n) {
-    showSlides(slideIndex = n);
+  showSlides(slideIndex = n);
 }
 
 function showSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("dot");
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+//   dots[slideIndex-1].className += " active";
 }
-
-loadProduct();

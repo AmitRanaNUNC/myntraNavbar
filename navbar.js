@@ -153,11 +153,11 @@ inputBox.onkeyup = (e) => {
     let userData = e.target.value;
     let searchArray = [];
     if (userData) {
-        searchArray = products.searchItems.filter((data) => {
-            return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
+        searchArray = productsList['T-Shirts'].filter((data) => {
+            return data.name.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
         });
         searchArray = searchArray.map((data) => {
-            return data = `<li>${data}</li>`;
+            return data = `<li>${data.name}</li>`;
         });
         searchWrapper.classList.add('activate');
     } else
@@ -172,7 +172,6 @@ function showSuggestions(list) {
 }
 
 function productPage(val, filterActive = '') {
-    console.log(val);
     hideClothes();
     let productList = productsList[val];
     let finalProduct = '';
