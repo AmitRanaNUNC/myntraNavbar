@@ -81,14 +81,14 @@ function fetchedProducts(id, cat, brandName, desc) {
                 </ul>
             </div>`;
             document.getElementById('prod-img').innerHTML = prodImg;
-            prod.image.map((data)=>{
+            prod.image.map((data) => {
                 sliderImg += `<div class="mySlides fade">
                     <img src="${data}" style="width:100%">
                     </div>`;
             });
             sliderImg += `<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>`;
-            document.getElementById('slide-img').innerHTML = sliderImg;   
+            document.getElementById('slide-img').innerHTML = sliderImg;
         }
 
         if (prod.name == brandName || prod.description == desc) {
@@ -96,7 +96,7 @@ function fetchedProducts(id, cat, brandName, desc) {
             <li class="item">
                 <div class="related-product">
                 <a target="_blank" href="productDetails.html?cat=${cat}&prodId=${prod.productId}&brand=${prod.name}&desc=${prod.description}">
-                    <img style="max-width:80%;max-height:80%;" src="${prod.image[0]}" alt="">
+                    <img src="${prod.image[0]}" alt="">
                 </a>
                     <h3 class="product-brand">${prod.name}</h3>
                     <p class="product-desc">${prod.description}</p>
@@ -185,25 +185,27 @@ loadProduct();
 
 const debounce = (func, delay) => {
     let debounceTimer;
-    return function() {
+    return function () {
         const context = this
         const args = arguments
-            clearTimeout(debounceTimer)
-                debounceTimer
+        clearTimeout(debounceTimer)
+        debounceTimer
             = setTimeout(() => func.apply(context, args), delay)
     }
 }
+let imgSlider = document.getElementById('img-slider');
+let prodImage = document.getElementById('prod-img');
 
 window.addEventListener('resize', debounce(reportWindowSize, 100));
-document.getElementById('img-slider').style.display = 'none';
+imgSlider.style.display = 'none';
 
-function reportWindowSize(){
+function reportWindowSize() {
     if (this.innerWidth <= 1200) {
-        document.getElementById('img-slider').style.display = 'block';
-        document.getElementById('prod-img').style.display = 'none';
-    }else{
-        document.getElementById('img-slider').style.display = 'none';
-        document.getElementById('prod-img').style.display = 'block';
+        imgSlider.style.display = 'block';
+        prodImage.style.display = 'none';
+    } else {
+        imgSlider.style.display = 'none';
+        prodImage.style.display = 'block';
     }
 }
 
@@ -211,25 +213,25 @@ let slideIndex = 1;
 showSlides(slideIndex);
 
 function plusSlides(n) {
-  showSlides(slideIndex += n);
+    showSlides(slideIndex += n);
 }
 
 function currentSlide(n) {
-  showSlides(slideIndex = n);
+    showSlides(slideIndex = n);
 }
 
 function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-//   dots[slideIndex-1].className += " active";
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+
+    [...slides].map((slide) => {
+        slide.style.display = "none";
+    });
+
+    [...dots].map((dot) => {
+        dot.className = dot.className.replace(" active", "");
+    });
+    slides[slideIndex - 1].style.display = "block";
 }
