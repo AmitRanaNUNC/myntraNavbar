@@ -180,9 +180,8 @@
     position: absolute;
     right:2%;
     z-index: 1;
-    /* border: 1px solid #d4d4d4; */
-    width: 57%;
-    height: 89%;
+    width: 60%;
+    height: 81%;
     margin:10px 0;
     border-radius: 5px;
   }
@@ -231,28 +230,11 @@
     }
 }
 
-@media (max-width:300px){
+@media (max-width:325px){
 
     .item{
         list-style: none;
-        padding:0 20px;
-    }
-
-    .item img{
-        width:220px;
-        height:auto;
-    }
-}
-
-@media (max-width:370px){
-
-    .item{
-        padding:0 20px;
-    }
-
-    .item img{
-        width:260px;
-        height:auto;
+        padding:0 5px;
     }
 
     #goToPrevSlide{
@@ -267,6 +249,14 @@
         bottom:60%;
         right:-1%;
         transform: translate(-1%,60%);
+    }
+}
+
+@media (max-width:370px){
+
+    .item img{
+        width:290px;
+        height:auto;
     }
 }
 
@@ -287,24 +277,44 @@
     }
 }
 
-@media (max-width:1060px) and (min-width:700px){
+@media (max-width:1023px) and (min-width:700px){
 
     .item{
-        padding:0 25px;
+        padding:0 35px;
     }
 
     #goToPrevSlide{
         position: absolute;
         bottom:60%;
-        left:3%;
-        transform: translate(3%,60%);
+        left:2%;
+        transform: translate(2%,60%);
     }
     
     #goToNextSlide{
         position: absolute;
         bottom:60%;
-        right:3%;
-        transform: translate(3%,60%);
+        right:3.5%;
+        transform: translate(3.5%,60%);
+    }
+}
+
+@media (min-width:1024px){
+    .item{
+        padding:0 18px;
+    }
+
+    #goToPrevSlide{
+        position: absolute;
+        bottom:60%;
+        left:1%;
+        transform: translate(1%,60%);
+    }
+    
+    #goToNextSlide{
+        position: absolute;
+        bottom:60%;
+        right:1%;
+        transform: translate(1%,60%);
     }
 }
 
@@ -316,26 +326,37 @@
     #goToPrevSlide{
         position: absolute;
         bottom:60%;
-        left:8%;
-        transform: translate(8%,60%);
+        left:7%;
+        transform: translate(7%,60%);
     }
     
     #goToNextSlide{
         position: absolute;
         bottom:60%;
-        right:8%;
-        transform: translate(8%,60%);
+        right:10%;
+        transform: translate(10%,60%);
     }
 }
 
 @media (min-width:540px) and (max-width:600px){
-    .item{
-        padding:0 5px;
-    }
 
     .item img{
-        width:250px;
+        width:225px;
         height:auto;
+    }
+
+    #goToPrevSlide{
+        position: absolute;
+        bottom:60%;
+        left:1%;
+        transform: translate(1%,60%);
+    }
+    
+    #goToNextSlide{
+        position: absolute;
+        bottom:60%;
+        right:1%;
+        transform: translate(10%,60%);
     }
 }
 
