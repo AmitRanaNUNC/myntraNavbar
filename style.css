@@ -242,6 +242,17 @@ nav a{
     cursor: pointer;
 }
 
+#show-filter{
+    display: none;
+    text-align: center;
+    font-size: large;
+    padding:10px;
+    background-color:teal;
+    color:white;
+    transition: ease-in-out;
+    cursor: pointer;
+}
+
 @media screen and (max-width:850px){
     nav{
         background-color: white;

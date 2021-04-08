@@ -165,14 +165,15 @@
     left:15%;
     border-radius:5px;
     width:400px;
+    height:530px;
 }
 
 .img-zoom-lens {
     position: absolute;
-    /* border: 1px solid #d4d4d4; */
+    border: 1px solid #d4d4d4;
     /* z-index: 1; */
-    width: 190px;
-    height: 180px;
+    width: 150px;
+    height: 150px;
   }
   
   .img-zoom-result {
@@ -180,8 +181,8 @@
     position: absolute;
     right:2%;
     z-index: 1;
-    width: 60%;
-    height: 81%;
+    width: 800px;
+    height: 530px;
     margin:10px 0;
     border-radius: 5px;
   }

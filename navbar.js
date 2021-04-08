@@ -196,6 +196,28 @@ function productPage(val, filterActive = '') {
     document.body.style.backgroundImage = 'none';
 }
 
+let content = document.getElementById('product-filters');
+
+window.onresize = () => {
+    if (screen.availWidth < 768) {
+        document.getElementById('show-filter').addEventListener("click", function () {
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                document.getElementById('show-filter').innerHTML = 'FILTERS';
+            } else {
+                content.style.display = "block";
+                document.getElementById('show-filter').innerHTML = 'CLOSE';
+            }
+        });
+        content.style.display = "none";
+        document.getElementById('show-filter').style.display = 'block';
+
+    } else {
+        document.getElementById('product-filters').style.display = 'block';
+        document.getElementById('show-filter').style.display = 'none';
+    }
+};
+
 let selectedFilter = {
     'BRAND': [], 'PRICE': [], 'COLOR': [], 'DISCOUNT': []
 };
@@ -222,11 +244,11 @@ function filterData(value, selectedSection, filterSection) {
         fetchedProduct = priceFilter(fetchedProduct, dummyArray, selectedFilter, productList, finalPriceValues);
 
     fetchedProduct.map((data) => {
-        finalProduct += fetchingProducts(data);
+        finalProduct += fetchingProducts(data, selectedSection);
     });
 
     if (fetchedProduct.length != 0)
-    productContainer.innerHTML = finalProduct;
+        productContainer.innerHTML = finalProduct;
     else
         productPage(selectedSection);
 }
@@ -279,7 +301,7 @@ function priceFilter(fetchedProduct, dummyArray, selectedFilter, productList, fi
     return fetchedProduct;
 }
 
-function fetchingProducts(product, val="") {
+function fetchingProducts(product, val = "") {
     if (product.name != '') {
         return `<div id="${product.productId}" class="product-card">
                 <a target="_blank" href="productDetails.html?cat=${val}&prodId=${product.productId}&brand=${product.name}&desc=${product.description}">
