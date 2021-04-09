@@ -120,6 +120,14 @@ function loadProduct() {
     fetchedProducts(id, cat, brandName, desc);
 }
 
+window.addEventListener('load',()=>{
+    let posterCheck = document.getElementsByClassName('poster-container')[0];
+    if(posterCheck.scrollWidth == posterCheck.clientWidth){
+        document.getElementById('goToPrevSlide').style.display = 'none';
+        document.getElementById('goToNextSlide').style.display = 'none';
+    }
+});
+
 function changeImg(img) {
     let mainImg = document.getElementById('main-image');
     mainImg.innerHTML = `<img id="big-image" onmouseout="bigImage()" onmouseover="largeImage()" src="${img}" alt=""></img>`;
