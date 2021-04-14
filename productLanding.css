@@ -151,9 +151,13 @@ body{
     }
 }
 
-@media screen and (min-width:1024px){
+@media (min-width:1024px) and (max-width:1060px){
     .product-card{
         margin:20px;
-        width:35vh;
+        width:17vh;
     }
+
+    /* .product-container{
+        overflow: auto;
+    } */
 }

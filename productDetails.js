@@ -119,10 +119,11 @@ function loadProduct() {
 
     fetchedProducts(id, cat, brandName, desc);
 }
+let screenHeight = window.innerHeight;
 
-window.addEventListener('load',()=>{
+window.addEventListener('load', () => {
     let posterCheck = document.getElementsByClassName('poster-container')[0];
-    if(posterCheck.scrollWidth == posterCheck.clientWidth){
+    if (posterCheck.scrollWidth == posterCheck.clientWidth) {
         document.getElementById('goToPrevSlide').style.display = 'none';
         document.getElementById('goToNextSlide').style.display = 'none';
     }

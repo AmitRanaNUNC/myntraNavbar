@@ -170,10 +170,10 @@
 
 .img-zoom-lens {
     position: absolute;
-    border: 1px solid #d4d4d4;
+    /* border: 1px solid #d4d4d4; */
     /* z-index: 1; */
-    width: 150px;
-    height: 150px;
+    width: 240px;
+    height: 160px;
   }
   
   .img-zoom-result {
