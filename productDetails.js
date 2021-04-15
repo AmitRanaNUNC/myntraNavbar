@@ -121,13 +121,24 @@ function loadProduct() {
 }
 let screenHeight = window.innerHeight;
 
-window.addEventListener('load', () => {
+window.onload = () =>{
+    showHideIcons();
+};
+
+window.addEventListener('resize', () => {
+    showHideIcons();
+});
+
+function showHideIcons(){
     let posterCheck = document.getElementsByClassName('poster-container')[0];
     if (posterCheck.scrollWidth == posterCheck.clientWidth) {
         document.getElementById('goToPrevSlide').style.display = 'none';
         document.getElementById('goToNextSlide').style.display = 'none';
+    } else {
+        document.getElementById('goToPrevSlide').style.display = 'block';
+        document.getElementById('goToNextSlide').style.display = 'block';
     }
-});
+}
 
 function changeImg(img) {
     let mainImg = document.getElementById('main-image');
