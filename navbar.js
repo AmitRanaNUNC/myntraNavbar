@@ -198,27 +198,25 @@ function productPage(val, filterActive = '') {
 
 let content = document.getElementById('product-filters');
 
-if((window.location.href.split('/')[3]).split('?')[0] != 'productDetails.html'){
-    window.onresize = () => {
-        if (screen.availWidth < 775) {
-            document.getElementById('show-filter').addEventListener("click", function () {
-                if (content.style.display === "block") {
-                    content.style.display = "none";
-                    document.getElementById('show-filter').innerHTML = 'FILTERS';
-                } else {
-                    content.style.display = "block";
-                    document.getElementById('show-filter').innerHTML = 'CLOSE';
-                }
-            });
-            content.style.display = "none";
-            document.getElementById('show-filter').style.display = 'block';
-    
-        } else {
-            document.getElementById('product-filters').style.display = 'block';
-            document.getElementById('show-filter').style.display = 'none';
-        }
-    };
-}
+window.onresize = () => {
+    if (screen.availWidth < 950) {
+        document.getElementById('show-filter').addEventListener("click", function () {
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                document.getElementById('show-filter').innerHTML = 'FILTERS';
+            } else {
+                content.style.display = "block";
+                document.getElementById('show-filter').innerHTML = 'CLOSE';
+            }
+        });
+        content.style.display = "none";
+        document.getElementById('show-filter').style.display = 'block';
+
+    } else {
+        document.getElementById('product-filters').style.display = 'block';
+        document.getElementById('show-filter').style.display = 'none';
+    }
+};
 
 let selectedFilter = {
     'BRAND': [], 'PRICE': [], 'COLOR': [], 'DISCOUNT': []

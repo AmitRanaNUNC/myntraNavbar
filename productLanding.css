@@ -140,7 +140,7 @@ body{
     }
 
     .product-details > h3, .product-desc, .product-price{
-        padding:0 12px;
+        padding:0 10px;
         font-size:12px;
     }
 
@@ -151,13 +151,15 @@ body{
     }
 }
 
-@media (min-width:1024px) and (max-width:1060px){
+@media (min-width:1024px) and (max-width:1300px){
     .product-card{
-        margin:20px;
-        width:17vh;
+        position: relative;
+        margin-left:35px;
+        width:25vh;
     }
-
-    /* .product-container{
-        overflow: auto;
-    } */
+    
+    .cart-button{
+        position: absolute;
+        bottom:0;
+    }
 }
